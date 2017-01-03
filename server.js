@@ -24,6 +24,6 @@ app.use(express.static(__dirname + '/public'));
 
 // require ("./test/app.js")(app);
 
-var port      = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+var port      = process.env.PORT || 3000;
 
 app.listen(port);
