@@ -2,12 +2,17 @@
     angular
         .module("TestApp", [])
         .controller("TestController", TestController)
+        .config(config)
         .filter('reverse', function() {
             return function(items) {
                 return items.slice().reverse();
             };
         });
 
+    function config($httpProvider) {
+        console.log($httpProvider);
+    }
+    
     function TestController($http) {
         var vm = this;
         vm.createMessage = createMessage;

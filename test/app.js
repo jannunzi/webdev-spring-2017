@@ -6,14 +6,15 @@ module.exports = function(app)
 
     var connectionString = 'mongodb://127.0.0.1:27017/test';
 
-    if(process.env.MLAB_USERNAME) {
-        var username = process.env.MLAB_USERNAME;
-        var password = process.env.MLAB_PASSWORD;
+    if(process.env.MLAB_USERNAME_WEBDEV) {
+        var username = process.env.MLAB_USERNAME_WEBDEV;
+        var password = process.env.MLAB_PASSWORD_WEBDEV;
         connectionString = 'mongodb://'+
-            process.env.MLAB_USERNAME + ':' +
-            process.env.MLAB_PASSWORD +
-            '@ds053459.mlab.com:53459/jannunzi_test';
+            username + ':' +
+            password +
+            '@ds151028.mlab.com:51028/webdev';
     }
+    console.log(connectionString);
 
     var mongoose = require("mongoose");  // npm install mongoose --save
     mongoose.connect(connectionString);
@@ -38,6 +39,9 @@ module.exports = function(app)
     }
 
     function createMessage(req, res) {
+        console.log('createMessage');
+        req.body.message = 'test 123';
+        console.log(req.body);
         TestModel
             .create(req.body)
             .then(

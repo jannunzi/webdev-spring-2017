@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BlogApp">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<p>
+    Some Static Content
+</p>
+<div class="container" ng-controller="BlogController">
+    <h1>Post New Blog</h1>
+
+    <label>Blog Title</label>
+    <input class="form-control"/>
+
+    <label>Blog Content</label>
+    <textarea class="form-control"></textarea>
+
+    <button class="btn btn-primary btn-block">Post</button>
+
+    <div ng-repeat="post in blogPosts">
+        <h2>{{post.title}}</h2>
+        <p>
+            {{post.content}}
+        </p>
+    </div>
+</div>
+</body>
+</html>

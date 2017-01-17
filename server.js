@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({type: 'website/json'}));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 var passport      = require('passport');
 var cookieParser  = require('cookie-parser');
 var session       = require('express-session');
@@ -16,13 +20,10 @@ app.use(passport.session());
 
 app.set('view engine', 'ejs');
 
-var bodyParser = require('body-parser');
-app.use(bodyParser.json({type: 'website/json'}));
-app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(express.static(__dirname + '/public'));
 
 require ("./test/app.js")(app);
+require("./todo/app")(app);
 
 var port      = process.env.PORT || 3000;
 
