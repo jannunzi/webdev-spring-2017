@@ -9,10 +9,11 @@ module.exports = function(app)
     if(process.env.MLAB_USERNAME_WEBDEV) {
         var username = process.env.MLAB_USERNAME_WEBDEV;
         var password = process.env.MLAB_PASSWORD_WEBDEV;
+        
         connectionString = 'mongodb://'+
             username + ':' +
             password +
-            '@ds151028.mlab.com:51028/webdev';
+            '@ds157268.mlab.com:57268/heroku_nh37fqq4';
     }
     console.log(connectionString);
 
