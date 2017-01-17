@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 var bodyParser = require('body-parser');
-app.use(bodyParser.json({type: 'website/json'}));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var passport      = require('passport');

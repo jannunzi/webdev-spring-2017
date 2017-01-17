@@ -40,9 +40,6 @@ module.exports = function(app)
     }
 
     function createMessage(req, res) {
-        // console.log('createMessage');
-        // req.body.message = 'test 123';
-        // console.log(req.body);
         TestModel
             .create(req.body)
             .then(
