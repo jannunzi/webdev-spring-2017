@@ -9,7 +9,7 @@ module.exports = function(app)
     if(process.env.MLAB_USERNAME_WEBDEV) {
         var username = process.env.MLAB_USERNAME_WEBDEV;
         var password = process.env.MLAB_PASSWORD_WEBDEV;
-        
+
         connectionString = 'mongodb://'+
             username + ':' +
             password +
@@ -40,9 +40,9 @@ module.exports = function(app)
     }
 
     function createMessage(req, res) {
-        console.log('createMessage');
-        req.body.message = 'test 123';
-        console.log(req.body);
+        // console.log('createMessage');
+        // req.body.message = 'test 123';
+        // console.log(req.body);
         TestModel
             .create(req.body)
             .then(
