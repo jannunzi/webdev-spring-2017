@@ -24,6 +24,7 @@ app.use(express.static(__dirname + '/public'));
 
 require ("./test/app.js")(app);
 require("./todo/app")(app);
+require("./blog/app")(app);
 
 var port      = process.env.PORT || 3000;
 

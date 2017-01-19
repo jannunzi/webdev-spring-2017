@@ -8,24 +8,32 @@
     <title>Title</title>
 </head>
 <body>
-<p>
-    Some Static Content
-</p>
 <div class="container" ng-controller="BlogController">
-    <h1>Post New Blog</h1>
+    <h1>Post New Blog
+        <a ng-click="deleteAll()">
+            <span class="glyphicon glyphicon-remove"></span>
+        </a>
+    </h1>
 
     <label>Blog Title</label>
-    <input class="form-control"/>
+    <input ng-model="post.title" class="form-control"/>
 
-    <label>Blog Content</label>
-    <textarea class="form-control"></textarea>
+    <label>Blog Body</label>
+    <textarea ng-model="post.body" class="form-control"></textarea>
 
-    <button class="btn btn-primary btn-block">Post</button>
+    <button ng-click="createPost(post)" class="btn btn-primary btn-block">Post</button>
+    <button ng-click="updatePost(post)" class="btn btn-success btn-block">Update</button>
 
     <div ng-repeat="post in blogPosts">
+        <a ng-click="deletePost(post)" class="pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+        </a>
+        <a ng-click="selectPost(post)" class="pull-right">
+            <span class="glyphicon glyphicon-cog"></span>
+        </a>
         <h2>{{post.title}}</h2>
         <p>
-            {{post.content}}
+            {{post.body}}
         </p>
     </div>
 </div>
