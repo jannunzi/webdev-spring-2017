@@ -5,3 +5,8 @@ input.form-control {
 body {
     padding-top: 36px;
 }
+
+.navbar-brand {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+}
