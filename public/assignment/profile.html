@@ -1,84 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
+    <title>Profile</title>
 </head>
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                Fixed Top
-            </a>
-            <p class="navbar-text pull-right">
-                <a href="#" class="navbar-link">
-          <span class="glyphicon glyphicon-plus">
-          </span>
-                </a>
-            </p>
+            <a class="navbar-brand" href="#">Brand</a>
         </div>
     </div>
 </nav>
 
 
-    <div class="container">
-        <h1>Profile</h1>
+<div class="container-fluid">
+<h1>Profile</h1>
+    <label for="first">First Name</label>
+    <input id="first" class="form-control" type="text" placeholder="First Name"/>
 
-        <form>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="alice@wonderland.com">
-            </div>
-            <div class="form-group">
-                <label for="first-name">First Name</label>
-                <input type="text" class="form-control" id="first-name" placeholder="Alice">
-            </div>
-            <div class="form-group">
-                <label for="last-name">Last Name</label>
-                <input type="text" class="form-control" id="last-name" placeholder="Wonderland">
-            </div>
-        </form>
+    <label for="last">Last Name</label>
+    <input id="last" class="form-control" type="text" placeholder="Last Name"/>
 
-        <a class="btn btn-primary btn-block"
-           href="website-list.html">Websites</a>
-        <a class="btn btn-danger  btn-block"
-           href="login.html">Logout</a>
-    </div>
+    <label for="email">Email</label>
+    <input id="email" class="form-control" type="email" placeholder="Email"/>
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
-        <div class="row navbar-text">
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-ok"></span>
-                </a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-star"></span>
-                </a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="#">
-                    <span class="glyphicon glyphicon-heart"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</nav>
+    <label>Username</label>
+    <input class="form-control" type="text" placeholder="Username"/>
 
+    <label>Password</label>
+    <input class="form-control" type="password" placeholder="Password"/>
+
+    <a class="btn btn-primary btn-block" href="login.html">
+        Logout
+    </a>
+</div>
 </body>
 </html>
