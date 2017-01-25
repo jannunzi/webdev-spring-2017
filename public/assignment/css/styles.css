@@ -3,6 +3,14 @@ input {
 }
 
 body {
-    padding-top: 35px;
+    padding-top: 60px;
     padding-bottom: 55px;
+}
+
+.no-left-padding {
+    padding-left: 0px;
+}
+
+.no-left-margin {
+    margin-left: 0px;
 }
