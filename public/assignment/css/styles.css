@@ -1,4 +1,5 @@
-input {
+input,
+textarea {
     margin-bottom:5px;
 }
 
@@ -13,4 +14,43 @@ body {
 
 .no-left-margin {
     margin-left: 0px;
+}
+
+.wbdv-left-pane {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 15px;
+    overflow: auto;
+}
+.wbdv-right-pane {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-bottom: 52px;
+    margin-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-y: auto;
+}
+
+.navbar-default {
+    background-color: #555555;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar a {
+    color: white;
+}
+
+
+.btn {
+    border-radius: 0px;
 }
