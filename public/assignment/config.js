@@ -6,10 +6,17 @@
     function configuration($routeProvider) {
         $routeProvider
             .when("/login",{
-                templateUrl: 'user/login.html'
+                templateUrl: 'views/user/templates/login.view.client.html',
+                controller: 'loginController',
+                controllerAs: 'model'
             })
             .when("/register",{
-                templateUrl: 'user/register.html'
+                templateUrl: 'views/user/templates/register.view.client.html'
             })
+            .when("/profile/:uid",{
+                templateUrl: 'views/user/templates/profile.view.client.html',
+                controller: 'profileController',
+                controllerAs: 'model'
+            });
     }
 })();
