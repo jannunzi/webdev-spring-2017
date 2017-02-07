@@ -12,16 +12,30 @@
         ];
 
         var api = {
+            "users": users,
+            "updateUser": updateUser,
             "findUserByCredentials": findUserByCredentials,
             "findUserById": findUserById
         };
         return api;
 
+        function updateUser(userId, newUser) {
+            for(var u in users) {
+                var user = users[u];
+                if( user._id === userId ) {
+                    users[u].firstName = newUser.firstName;
+                    users[u].lastName = newUser.lastName;
+                    return user;
+                }
+            }
+            return null;
+        }
+
         function findUserById(uid) {
             for(var u in users) {
                 var user = users[u];
                 if( user._id === uid ) {
-                    return user;
+                    return angular.copy(user);
                 }
             }
             return null;
@@ -32,7 +46,7 @@
                 var user = users[u];
                 if( user.username === username &&
                     user.password === password) {
-                    return user;
+                    return angular.copy(user);
                 }
             }
             return null;

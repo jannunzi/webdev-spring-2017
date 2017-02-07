@@ -16,22 +16,51 @@
 
 <div class="container-fluid">
 <h1>Profile</h1>
+
+    <div class="alert alert-danger" ng-show="model.error">
+        {{model.error}}
+    </div>
+
+    <div class="alert alert-success" ng-show="model.message">
+        {{model.message}}
+    </div>
+
     <label for="first">First Name</label>
-    <input id="first" class="form-control" type="text" placeholder="First Name"/>
+    <input ng-model="model.user.firstName"
+           id="first"
+           class="form-control"
+           type="text"
+           placeholder="First Name"/>
 
     <label for="last">Last Name</label>
-    <input id="last" class="form-control" type="text" placeholder="Last Name"/>
+    <input ng-model="model.user.lastName"
+           id="last"
+           class="form-control"
+           type="text"
+           placeholder="Last Name"/>
 
     <label for="email">Email</label>
-    <input id="email" class="form-control" type="email" placeholder="Email"/>
+    <input ng-model="model.user.email"
+           id="email"
+           class="form-control"
+           type="email"
+           placeholder="Email"/>
 
     <label>Username</label>
-    <input class="form-control" type="text" placeholder="Username"/>
+    <input ng-model="model.user.username"
+           class="form-control"
+           type="text"
+           placeholder="Username"/>
 
     <label>Password</label>
     <input class="form-control" type="password" placeholder="Password"/>
 
-    <a class="btn btn-primary btn-block" href="#/profile">
+    <a href="#/user/{{model.user._id}}/website" class="btn btn-success btn-block">
+        Websites
+    </a>
+
+    <a ng-click="model.update(model.user)"
+       class="btn btn-primary btn-block">
         Update
     </a>
 
