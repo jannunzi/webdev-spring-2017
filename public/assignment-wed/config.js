@@ -20,6 +20,6 @@
                 templateUrl: "website/website-list.view.client.html"
             });
 
-        $locationProvider.html5Mode(true);
+        // $locationProvider.html5Mode(true);
     }
 })();
