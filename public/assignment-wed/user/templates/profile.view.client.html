@@ -1,7 +1,8 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-right">
-            <span class="glyphicon glyphicon-ok"></span>
+            <span ng-click="model.updateUser(model.user)"
+                  class="glyphicon glyphicon-ok"></span>
         </div>
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Profile</a>
@@ -11,13 +12,23 @@
 
 <div class="container-fluid">
 
+    <div CLASS="alert alert-danger" ng-show="model.error">
+        {{model.error}}
+    </div>
+
+    <div class="alert alert-success" ng-show="model.message">
+        {{model.message}}
+    </div>
+
     <label for="first">First Name</label>
-    <input id="first"
+    <input ng-model="model.user.firstName"
+           id="first"
            class="form-control"
            placeholder="John"/>
 
     <label for="last">Last Name</label>
-    <input id="last"
+    <input ng-model="model.user.lastName"
+           id="last"
            class="form-control"
            placeholder="Doe"/>
 
@@ -28,7 +39,8 @@
            placeholder="john@doe.com"/>
 
     <label for="username">Username</label>
-    <input id="username"
+    <input ng-model="model.user.username"
+           id="username"
            class="form-control"
            placeholder="john123"/>
 
@@ -44,7 +56,7 @@
            type="password"
            placeholder="req4321"/>
 
-    <a href="#/websites" class="btn btn-primary btn-block">Websites</a>
+    <a href="#/user/{{model.user._id}}/website" class="btn btn-primary btn-block">Websites</a>
     <a href="#/login" class="btn btn-danger btn-block">Logout</a>
 </div>
 

@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="../../css/bootstrap.css" rel="stylesheet"/>
-    <link href="../css/styles.css" rel="stylesheet"/>
-    <meta charset="UTF-8">
-    <title>Widget List</title>
-</head>
-<body>
-
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
@@ -27,6 +17,34 @@
 </nav>
 
 <div class="container-fluid">
+
+    {{model.widgets}}
+
+    <div ng-repeat="widget in model.widgets">
+        <div ng-switch="widget.widgetType">
+            <div class="jga-toolbar">
+                <a>
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+                <span class="glyphicon glyphicon-align-justify"></span>
+            </div>
+            <div ng-switch-when="HEADER">
+                <h1 ng-if="widget.size == 1">{{widget.text}}</h1>
+                <h2 ng-if="widget.size == 2">{{widget.text}}</h2>
+                <h3 ng-if="widget.size == 3">{{widget.text}}</h3>
+                <h4 ng-if="widget.size == 4">{{widget.text}}</h4>
+                <h5 ng-if="widget.size == 5">{{widget.text}}</h5>
+                <h6 ng-if="widget.size == 6">{{widget.text}}</h6>
+            </div>
+            <div ng-switch-when="IMAGE">
+                <img ng-src="{{widget.url}}" width="{{widget.width}}"/>
+            </div>
+            <div ng-switch-when="YOUTUBE">
+                <iframe width="100%" ng-src="{{model.doYouTrustUrl(widget.url)}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <div>
         <div class="jga-toolbar">
             <a>
@@ -37,6 +55,12 @@
         <h1>GIZMODO</h1>
     </div>
     <div>
+        <div class="jga-toolbar">
+            <a>
+                <span class="glyphicon glyphicon-cog"></span>
+            </a>
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </div>
         <h3>New Measurements of the Universe Expanding Tell a Confusing Story</h3>
     </div>
     <div>
@@ -76,6 +100,3 @@
         </div>
     </div>
 </nav>
-
-</body>
-</html>

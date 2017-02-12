@@ -11,10 +11,35 @@
             {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
         ];
         var api = {
-            "findUserByCredentials": findUserByCredentials
+            "findUserByCredentials": findUserByCredentials,
+            "findUserById": findUserById,
+            "updateUser": updateUser
+            //TODO: complete the CRUD functions
+            // "createUser": createUser,
+            // "deleteUser": deleteUser
         };
         return api;
+
+        function updateUser(userId, newUser) {
+            for(var u in users) {
+                if( users[u]._id == userId ) {
+                    users[u].firstName = newUser.firstName;
+                    users[u].lastName = newUser.lastName;
+                    return users[u];
+                }
+            }
+            return null;
+        }
         
+        function findUserById(userId) {
+            for(var u in users) {
+                if( users[u]._id == userId ) {
+                    return users[u];
+                }
+            }
+            return null;
+        }
+
         function findUserByCredentials(username, password) {
             for(var u in users) {
                 if( users[u].username == username &&
