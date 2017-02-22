@@ -12,6 +12,10 @@
         vm.websiteId = $routeParams.wid;
         vm.pageId = $routeParams.pid;
         vm.widgets = WidgetService.findAllWidgets(vm.pageId);
+        //
+        // $(".widget-list").sortable({
+        //     axis: "y"
+        // });
 
         function getWidgetTemplateUrl(widgetType) {
             var url = 'views/widget/templates/widget-'+widgetType+'.view.client.html';

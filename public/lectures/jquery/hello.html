@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../../js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="../../js/vendor/jquery-ui.min.js"></script>
+    <script>
+
+        $(init);
+
+        function  init() {
+            jQuery('h1').html('Hello Again!');
+            var h2 = jQuery('<h2>This is dynamic heading</h2>');
+            var body = jQuery('body');
+            body.append(h2);
+            var paragrah = $('<p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>');
+            body.prepend(paragrah);
+
+            var movies = ['Terminator', 'Aliens', 'Titanic', 'Avatar'];
+
+            var list = $('<ul>');
+            for(var m in movies) {
+//                var li = $('<li>'+movies[m]+'</li>');
+                var li = $('<li>');
+                li.append(movies[m]);
+                list.append(li);
+            }
+            body.append(list);
+            $('h1').draggable();
+            paragrah.draggable();
+            list.sortable();
+            $('.mylist').sortable();
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="mylist">
+    <div>123</div>
+    <div>234</div>
+    <div>345</div>
+    <div>456</div>
+    <div>567</div>
+</div>
+
+<h1>Hello World!</h1>
+
+</body>
+</html>

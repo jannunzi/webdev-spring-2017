@@ -18,28 +18,30 @@
 
 <div class="container-fluid">
 
-    <div ng-repeat="widget in model.widgets">
-        <div class="jga-toolbar">
-            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-            <span class="glyphicon glyphicon-align-justify"></span>
-        </div>
+    <div class="widget-list" wbdv-sortable="">
+        <div ng-repeat="widget in model.widgets">
+            <div class="jga-toolbar">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+                <span class="glyphicon glyphicon-align-justify"></span>
+            </div>
 
-        <!--<ng-include src="model.getWidgetTemplateUrl(widget.widgetType)"></ng-include>-->
+            <!--<ng-include src="model.getWidgetTemplateUrl(widget.widgetType)"></ng-include>-->
 
-        <div ng-switch="widget.widgetType">
-            <div ng-switch-when="HEADER">
-                <ng-include src="'views/widget/templates/widget-HEADER.view.client.html'"></ng-include>
-            </div>
-            <div ng-switch-when="IMAGE">
-                <ng-include src="'views/widget/templates/widget-IMAGE.view.client.html'"></ng-include>
-            </div>
-            <div ng-switch-when="HTML">
-                <ng-include src="'views/widget/templates/widget-HTML.view.client.html'"></ng-include>
-            </div>
-            <div ng-switch-when="YOUTUBE">
-                <ng-include src="'views/widget/templates/widget-YOUTUBE.view.client.html'"></ng-include>
+            <div ng-switch="widget.widgetType">
+                <div ng-switch-when="HEADER">
+                    <ng-include src="'views/widget/templates/widget-HEADER.view.client.html'"></ng-include>
+                </div>
+                <div ng-switch-when="IMAGE">
+                    <ng-include src="'views/widget/templates/widget-IMAGE.view.client.html'"></ng-include>
+                </div>
+                <div ng-switch-when="HTML">
+                    <ng-include src="'views/widget/templates/widget-HTML.view.client.html'"></ng-include>
+                </div>
+                <div ng-switch-when="YOUTUBE">
+                    <ng-include src="'views/widget/templates/widget-YOUTUBE.view.client.html'"></ng-include>
+                </div>
             </div>
         </div>
     </div>

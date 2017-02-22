@@ -3,7 +3,7 @@ var app = express();
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 var passport      = require('passport');
 var cookieParser  = require('cookie-parser');
@@ -25,6 +25,11 @@ app.use(express.static(__dirname + '/public'));
 require ("./test/app.js")(app);
 require("./todo/app")(app);
 require("./blog/app")(app);
+
+// require("./assignment-wed/app.js")(app);
+
+var assignment = require("./assignment/app.js");
+assignment(app);
 
 var port      = process.env.PORT || 3000;
 
