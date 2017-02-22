@@ -26,10 +26,10 @@ require ("./test/app.js")(app);
 require("./todo/app")(app);
 require("./blog/app")(app);
 
-// require("./assignment-wed/app.js")(app);
+require("./assignment-wed/app.js")(app);
 
-var assignment = require("./assignment/app.js");
-assignment(app);
+// var assignment = require("./assignment/app.js");
+// assignment(app);
 
 var port      = process.env.PORT || 3000;
 
