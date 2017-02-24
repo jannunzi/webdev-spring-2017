@@ -11,7 +11,11 @@
         vm.pageId = $routeParams.pid;
 
         vm.widgets = WidgetService.findAllWidgets(vm.pageId);
-        
+        $('#widget-list')
+            .sortable({
+                axis: "y"
+            });
+
         function doYouTrustUrl(url) {
             var baseUrl = "https://www.youtube.com/embed/";
             var urlParts = url.split('/');

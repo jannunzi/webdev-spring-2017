@@ -1,10 +1,18 @@
 <div class="container-fluid">
     <h1>Register</h1>
 
-    <input class="form-control" placeholder="username"/>
-    <input class="form-control" type="password" placeholder="password"/>
-    <input class="form-control" type="password" placeholder="validate password"/>
-    <a class="btn btn-primary btn-block" href="#/profile">
+    <div ng-show="model.error" class="alert alert-danger">
+        {{model.error}}
+    </div>
+
+    <div ng-show="model.message" class="alert alert-info">
+        {{model.message}}
+    </div>
+
+    <input ng-model="user.username" class="form-control" placeholder="username"/>
+    <input ng-model="user.password" class="form-control" type="password" placeholder="password"/>
+    <input ng-model="user.password2" class="form-control" type="password" placeholder="validate password"/>
+    <a ng-click="model.registerUser(user)" class="btn btn-primary btn-block">
         Register
     </a>
     <a class="btn btn-success btn-block" href="#/login">

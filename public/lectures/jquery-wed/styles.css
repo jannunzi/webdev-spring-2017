@@ -1,0 +1,159 @@
+input, textarea {
+    margin-bottom: 5px;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    /*overflow: hidden;*/
+}
+
+.navbar-default {
+    background-color: #454B4F;
+    border-bottom-color: #000;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-text {
+    color: white;
+}
+
+.jga-toolbar {
+    position: absolute;
+    right: 15px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0.7;
+}
+
+.wbdv-left-pane {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 15px;
+    overflow: auto;
+    background-color: #363b3e;
+}
+.wbdv-right-pane {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-y: auto;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: white;
+    }
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: white;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+    color: white;
+    background-color: #555555;
+}
+
+.panel-heading a {
+    color: white;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+    color: white;
+    background-color: transparent;
+}
+
+.navbar-text.pull-left {
+    margin-left: 0px;
+}
+
+/*
+.list-group-item a {
+    color: white;
+}
+*/
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: white;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.panel-default>.panel-heading {
+    color: white;
+    background-color: #363b3e;
+    border-color: #363b3e;
+}
+
+.panel-default {
+    border-color: #363b3e;
+    background-color: #363b3e;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav>li>a {
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+    .navbar-nav {
+        float: left;
+        margin: 0;
+        margin-top: 6px;
+    }
+}
+
+.panel>.list-group .list-group-item {
+    background-color: #4B5155;
+    margin-top: 10px;
+    border-width: 0px 0;
+}
+
+
+.list-group {
+    background-color: #363b3e;
+}
+
+.panel>.list-group .list-group-item.active {
+    background-color: #337ab7;
+}
+
+.navbar-default.navbar-fixed-bottom {
+    border-top-color: #000;
+}
+
+.fa-rotate-45 {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.nav>li {
+    margin-right: 4px;
+}

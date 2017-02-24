@@ -9,14 +9,18 @@
 
         function login(user) {
             var promise = UserService.findUserByCredentials(user.username, user.password);
-            promise.success(function (response) {
-                var loginUser = response;
-                if(loginUser != null) {
-                    $location.url('/profile/' + loginUser._id);
-                } else {
+            promise
+                .success(function (user) {
+                    var loginUser = user;
+                    if(loginUser != null) {
+                        $location.url('/profile/' + loginUser._id);
+                    } else {
+                        vm.error = 'user not found';
+                    }
+                })
+                .error(function(err) {
                     vm.error = 'user not found';
-                }
-            });
+                });
         }
     }
 })();

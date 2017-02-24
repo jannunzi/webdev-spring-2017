@@ -13,36 +13,37 @@
 
         var api = {
             "users": users,
+            "createUser": createUser,
+            "deleteUser": deleteUser,
             "updateUser": updateUser,
             "findUserByCredentials": findUserByCredentials,
-            "findUserById": findUserById
+            "findUserById": findUserById,
+            "findUserByUsername": findUserByUsername
         };
         return api;
 
-        function updateUser(userId, newUser) {
-            for(var u in users) {
-                var user = users[u];
-                if( user._id === userId ) {
-                    users[u].firstName = newUser.firstName;
-                    users[u].lastName = newUser.lastName;
-                    return user;
-                }
-            }
-            return null;
+        function deleteUser(userId) {
+            return $http.delete('/api/morning/user/'+userId);
         }
 
-        function findUserById(uid) {
-            for(var u in users) {
-                var user = users[u];
-                if( user._id === uid ) {
-                    return angular.copy(user);
-                }
-            }
-            return null;
+        function createUser(user) {
+            return $http.post("/api/morning/user", user);
+        }
+
+        function findUserByUsername(username) {
+            return $http.get("/api/morning/user?username="+username);
         }
 
         function findUserByCredentials(username, password) {
             return $http.get("/api/morning/user?username="+username+"&password="+password);
+        }
+
+        function updateUser(userId, newUser) {
+            return $http.put("/api/morning/user/"+userId, newUser);
+        }
+
+        function findUserById(uid) {
+            return $http.get("/api/morning/user/"+uid);
         }
     }
 })();

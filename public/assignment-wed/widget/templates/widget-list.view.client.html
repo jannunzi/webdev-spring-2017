@@ -20,27 +20,29 @@
 
     {{model.widgets}}
 
-    <div ng-repeat="widget in model.widgets">
-        <div ng-switch="widget.widgetType">
-            <div class="jga-toolbar">
-                <a>
-                    <span class="glyphicon glyphicon-cog"></span>
-                </a>
-                <span class="glyphicon glyphicon-align-justify"></span>
-            </div>
-            <div ng-switch-when="HEADER">
-                <h1 ng-if="widget.size == 1">{{widget.text}}</h1>
-                <h2 ng-if="widget.size == 2">{{widget.text}}</h2>
-                <h3 ng-if="widget.size == 3">{{widget.text}}</h3>
-                <h4 ng-if="widget.size == 4">{{widget.text}}</h4>
-                <h5 ng-if="widget.size == 5">{{widget.text}}</h5>
-                <h6 ng-if="widget.size == 6">{{widget.text}}</h6>
-            </div>
-            <div ng-switch-when="IMAGE">
-                <img ng-src="{{widget.url}}" width="{{widget.width}}"/>
-            </div>
-            <div ng-switch-when="YOUTUBE">
-                <iframe width="100%" ng-src="{{model.doYouTrustUrl(widget.url)}}" frameborder="0" allowfullscreen></iframe>
+    <div id="widget-list">
+        <div ng-repeat="widget in model.widgets">
+            <div ng-switch="widget.widgetType">
+                <div class="jga-toolbar">
+                    <a>
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </a>
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </div>
+                <div ng-switch-when="HEADER">
+                    <h1 ng-if="widget.size == 1">{{widget.text}}</h1>
+                    <h2 ng-if="widget.size == 2">{{widget.text}}</h2>
+                    <h3 ng-if="widget.size == 3">{{widget.text}}</h3>
+                    <h4 ng-if="widget.size == 4">{{widget.text}}</h4>
+                    <h5 ng-if="widget.size == 5">{{widget.text}}</h5>
+                    <h6 ng-if="widget.size == 6">{{widget.text}}</h6>
+                </div>
+                <div ng-switch-when="IMAGE">
+                    <img ng-src="{{widget.url}}" width="{{widget.width}}"/>
+                </div>
+                <div ng-switch-when="YOUTUBE">
+                    <iframe width="100%" ng-src="{{model.doYouTrustUrl(widget.url)}}" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>

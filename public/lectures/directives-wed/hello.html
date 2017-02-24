@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DirectivesSampleApp">
+<head>
+    <meta charset="UTF-8">
+    <link href="../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="../../js/vendor/jquery-ui.min.js"></script>
+    <script src="../../js/angular.js"></script>
+    <script src="directives/wbdvDirectives.js"></script>
+    <script src="hello.js"></script>
+    <title>Title</title>
+    <style>
+        hello {
+            color: red;
+        }
+        .green {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="MovieController"
+         class="container-fluid">
+        <h1 wbdv-red-fore-ground-color="">Hello World!</h1>
+        <hello></hello>
+        <lorem-ipsum wbdv-draggable></lorem-ipsum>
+        <div wbdv-red-fore-ground-color lorem-ipsum=""></div>
+        <ul wbdv-sortable>
+            <li>Titanic</li>
+            <li>Avatar</li>
+            <li>Terminator</li>
+            <li>The Abyss</li>
+        </ul>
+    </div>
+</body>
+</html>
