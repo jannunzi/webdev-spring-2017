@@ -25,12 +25,16 @@ app.use(express.static(__dirname + '/public'));
 require ("./test/app.js")(app);
 require("./todo/app")(app);
 require("./blog/app")(app);
+require('./experiments/upload/app')(app);
+// require('./experiments/mongoose/app')(app);
 
 // require("./assignment-wed/app.js")(app);
+
+require("./lectures/mongo/movies")(app);
 
 var assignment = require("./assignment/app.js");
 assignment(app);
 
-var port      = process.env.PORT || 3000;
+var port      = process.env.PORT || 4000;
 
 app.listen(port);

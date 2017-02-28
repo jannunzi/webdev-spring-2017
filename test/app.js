@@ -6,15 +6,15 @@ module.exports = function(app)
 
     var connectionString = 'mongodb://127.0.0.1:27017/test';
 
-    if(process.env.MLAB_USERNAME_WEBDEV) {
-        var username = process.env.MLAB_USERNAME_WEBDEV;
-        var password = process.env.MLAB_PASSWORD_WEBDEV;
-
-        connectionString = 'mongodb://'+
-            username + ':' +
-            password +
-            '@ds157268.mlab.com:57268/heroku_nh37fqq4';
-    }
+    // if(process.env.MLAB_USERNAME_WEBDEV) {
+    //     var username = process.env.MLAB_USERNAME_WEBDEV;
+    //     var password = process.env.MLAB_PASSWORD_WEBDEV;
+    //
+    //     connectionString = 'mongodb://'+
+    //         username + ':' +
+    //         password +
+    //         '@ds157268.mlab.com:57268/heroku_nh37fqq4';
+    // }
     console.log(connectionString);
 
     var mongoose = require("mongoose");  // npm install mongoose --save
