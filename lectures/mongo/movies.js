@@ -9,6 +9,8 @@ module.exports = function (app) {
 
     var MovieSchema = mongoose.Schema({
         title: String,
+        poster: String,
+        imdbID: String,
         director: String,
         rating: String,
         created: Date
@@ -90,13 +92,13 @@ module.exports = function (app) {
     }
 
     // MovieModel.create({title: 'Terminator'});
-    var promise = MovieModel.find();
-    promise.then(
-        function (movies) {
-            console.log(movies);
-        },
-        function (error) {
-
-        }
-    )
+    // var promise = MovieModel.find();
+    // promise.then(
+    //     function (movies) {
+    //         console.log(movies);
+    //     },
+    //     function (error) {
+    //
+    //     }
+    // )
 };

@@ -1,4 +1,4 @@
-module.exports = function (app) {
+module.exports = function (app, userModel) {
     app.get("/api/morning/user", findUser);
     app.get("/api/morning/user/:userId", findUserByUserId);
     app.put("/api/morning/user/:userId", updateUser);
@@ -26,9 +26,16 @@ module.exports = function (app) {
 
     function createUser(req, res) {
         var newUser = req.body;
-        newUser._id = (new Date()).getTime() + "";
-        users.push(newUser);
-        res.json(newUser);
+        userModel
+            .createUser(newUser)
+            .then(function(user) {
+                res.json(user);
+            }, function (error) {
+                res.sendStatus(500).send(error);
+            });
+        // newUser._id = (new Date()).getTime() + "";
+        // users.push(newUser);
+        // res.json(newUser);
     }
 
     function updateUser(req, res) {
