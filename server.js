@@ -30,8 +30,8 @@ require('./experiments/upload/app')(app);
 
 // require("./assignment-wed/app.js")(app);
 
-// require("./lectures/mongo/movies")(app);
-require('./lectures-wed/mongo/movies')(app);
+require("./lectures/mongo/movies")(app);
+// require('./lectures-wed/mongo/movies')(app);
 require('./experiments/mongoose/projects/app')(app);
 
 var assignment = require("./assignment/app.js");

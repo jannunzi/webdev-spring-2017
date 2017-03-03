@@ -9,23 +9,31 @@
 </head>
 <body>
 <div class="container-fluid" ng-controller="MovieController as model">
-    <h1>Movies Database</h1>
-    <label>Title</label>
-    <input ng-model="model.movie.title" class="form-control"/>
-    <a ng-click="model.createMovie(model.movie)" class="btn btn-block btn-primary">Create</a>
-    <a ng-click="model.updateMovie(model.movie)" class="btn btn-block btn-success">Update</a>
+    <div class="row">
+        <div class="col-xs-6">
+            <h1>Movies Database</h1>
+            <label>Title</label>
+            <input ng-model="model.movie.title" class="form-control"/>
+            <a ng-click="model.createMovie(model.movie)" class="btn btn-block btn-primary">Create</a>
+            <a ng-click="model.updateMovie(model.movie)" class="btn btn-block btn-success">Update</a>
 
-    <ul class="list-group">
-        <li ng-repeat="movie in model.movies" class="list-group-item">
-            {{movie.title}}
-            <a ng-click="model.deleteMovie(movie._id)" class="pull-right">
-                <span class="glyphicon glyphicon-remove"></span>
-            </a>
-            <a ng-click="model.selectMovie(movie._id)" class="pull-right">
-                <span class="glyphicon glyphicon-cog"></span>
-            </a>
-        </li>
-    </ul>
+            <ul class="list-group">
+                <li ng-repeat="movie in model.movies" class="list-group-item">
+                    {{movie.title}}
+                    <a ng-click="model.deleteMovie(movie._id)" class="pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                    <a ng-click="model.selectMovie(movie._id)" class="pull-right">
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-6">
+            <h1>Search Movies</h1>
+        </div>
+    </div>
+
 
 </div>
 </body>
