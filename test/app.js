@@ -3,6 +3,7 @@ module.exports = function(app)
     app.get("/api/test", findAllMessages);
     app.post("/api/test", createMessage);
     app.delete("/api/test/:id", deleteMessage);
+    // app.post("/api/evening/user/:userId/movie/:movieId", favoriteMovie);
 
     var connectionString = 'mongodb://127.0.0.1:27017/test';
 

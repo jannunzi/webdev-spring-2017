@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script data-main="main.js"
+            src="../../../../js/vendor/requirejs/require.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div ng-controller="HelloController">
+        <h1>Angular Routing + RequireJS</h1>
+        {{hello}}
+        <a href="#view1">View 1</a> | <a href="#view2">View 2</a>
+        <ng-view></ng-view>
+    </div>
+</body>
+</html>

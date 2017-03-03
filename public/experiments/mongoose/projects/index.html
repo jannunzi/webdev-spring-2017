@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ProjectApp">
+<head>
+    <link href="../../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../../js/angular.js"></script>
+    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div ng-controller="UserController"
+                 class="col-xs-6">
+                <h1>Users</h1>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <input ng-model="user.username" class="form-control"/>
+                        <span ng-click="createUser(user)" style="position: relative; top:-25px; right: 10px;" class="glyphicon glyphicon-plus pull-right"></span>
+                    </li>
+                    <li ng-repeat="user in users" class="list-group-item">
+                        <span ng-click="deleteUser(user)" class="glyphicon glyphicon-remove pull-right"></span>
+                        <span ng-click="selectUser(user)"
+                              class="glyphicon glyphicon-cog pull-right"></span>
+                        <span ng-click="addUserToProject(user)"
+                              class="glyphicon glyphicon-plus pull-right"></span>
+                        <span ng-click="removeUserFromProject(user)"
+                              class="glyphicon glyphicon-minus pull-right"></span>
+                        {{user.username}}
+                        <ul>
+                            <li ng-repeat="project in user.projects">
+                                {{project.name}}
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                {{users}}
+            </div>
+            <div ng-controller="ProjectController"
+                 class="col-xs-6">
+                <h1>Projects</h1>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <input ng-model="project.name" class="form-control"/>
+                        <span ng-click="createProject(project)"
+                              style="position: relative; top:-25px; right: 10px;"
+                              class="glyphicon glyphicon-plus pull-right"></span>
+                    </li>
+                    <li ng-repeat="project in projects" class="list-group-item">
+                        <span ng-click="deleteProject(project)"
+                              class="glyphicon glyphicon-remove pull-right"></span>
+                        <span ng-click="selectProject(project)"
+                              class="glyphicon glyphicon-cog pull-right"></span>
+                        <span ng-click="addProjectToUser(project)"
+                              class="glyphicon glyphicon-plus pull-right"></span>
+                        <span ng-click="removeProjectFromUser(Project)"
+                              class="glyphicon glyphicon-minus pull-right"></span>
+                        {{project.name}}
+                        <ul>
+                            <li ng-repeat="user in project.users">
+                                {{user.username}}
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                {{projects}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

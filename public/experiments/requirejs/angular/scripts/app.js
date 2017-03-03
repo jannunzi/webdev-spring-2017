@@ -1,12 +1,7 @@
 define([
     'angular',
-    'jquery'
-], function (angular, jquery) {
-    console.log(angular);
-    console.log(jquery);
-    // jquery('.navbar-toggle').dropdown();
+    'angular-route'
+], function (angular) {
+    angular
+        .module('RequireSampleApp', ['ngRoute'])
 });
-// (function(){
-//     angular
-//         .module("RequireApp", []);
-// })();

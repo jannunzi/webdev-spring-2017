@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MovieApp">
+<head>
+    <link href="../../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../../js/angular.js"></script>
+    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container-fluid" ng-controller="MovieController as model">
+        <h1>Movies</h1>
+
+        <input ng-model="model.movie.title" class="form-control" placeholder="title">
+        <button ng-click="model.searchMovie(model.movie)" class="btn btn-block btn-primary">
+            Search Movie
+        </button>
+        <button ng-click="model.createMovie(model.movie)" class="btn btn-block btn-primary">
+            Create Movie
+        </button>
+        <button ng-click="model.updateMovie(model.movie)" class="btn btn-block btn-success">
+            Update Movie
+        </button>
+
+        <ul class="list-group">
+            <li ng-repeat="movie in model.movies" class="list-group-item">
+                <img width="20px" ng-src="{{movie.Poster}}"/>
+                {{movie.Title}}
+                <a ng-click="model.favoriteMovie(movie)" class="pull-right">
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </a>
+                <a ng-click="model.selectMovie(movie._id)" class="pull-right">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+                <a ng-click="model.deleteMovie(movie._id)" class="pull-right">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </li>
+        </ul>
+
+        {{model.movies}}
+    </div>
+</body>
+</html>
