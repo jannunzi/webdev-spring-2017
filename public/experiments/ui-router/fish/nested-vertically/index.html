@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../../../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../../../js/angular.1.6.2.js"></script>
+    <script src="../../../../js/vendor/ui-routers/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <script src="services/trip.service.js"></script>
+    <script src="services/fish.service.js"></script>
+    <script src="controllers/fish-list.controller.js"></script>
+    <script src="controllers/trip-list.controller.js"></script>
+    <script src="controllers/trip-details.controller.js"></script>
+    <script src="controllers/fish-details.controller.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li.list-group-item.active > a {
+            color: white;
+        }
+        li.list-group-item.active:first-child {
+            background-color: black;
+        }
+    </style>
+</head>
+<body ng-app="FishApp">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4">
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

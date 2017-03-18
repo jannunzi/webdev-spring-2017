@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../../js/angular.1.6.2.js"></script>
+    <script src="../js/vendor/angular-ui-router-alpha.js"></script>
+    <link href="../../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="hello.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="HelloApp">
+    <div class="container-fluid">
+        <h1>Hello Again</h1>
+
+        <a ui-sref="hello">Hello</a> |
+        <a ui-sref="bye">Bye</a>
+
+        <ui-view></ui-view>
+
+    </div>
+</body>
+</html>

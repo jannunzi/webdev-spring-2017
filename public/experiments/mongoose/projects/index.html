@@ -19,18 +19,19 @@
                         <span ng-click="createUser(user)" style="position: relative; top:-25px; right: 10px;" class="glyphicon glyphicon-plus pull-right"></span>
                     </li>
                     <li ng-repeat="user in users" class="list-group-item">
-                        <span ng-click="deleteUser(user)" class="glyphicon glyphicon-remove pull-right"></span>
-                        <span ng-click="selectUser(user)"
+                        <span ng-click="deleteUser(user)" title="delete user"
+                              class="glyphicon glyphicon-remove pull-right"></span>
+                        <span ng-click="selectUser(user)" title="select user"
                               class="glyphicon glyphicon-cog pull-right"></span>
-                        <span ng-click="addUserToProject(user)"
+                        <span ng-click="addUserToProject(user)" title="add user to selected project"
                               class="glyphicon glyphicon-plus pull-right"></span>
-                        <span ng-click="removeUserFromProject(user)"
+                        <span ng-click="removeUserFromProject(user)" title="remove user from selected project"
                               class="glyphicon glyphicon-minus pull-right"></span>
                         {{user.username}}
                         <ul>
                             <li ng-repeat="project in user.projects">
                                 {{project.name}}
-                                <span class="glyphicon glyphicon-remove"></span>
+                                <span ng-click="removeProjectFromUser(project)" class="glyphicon glyphicon-remove"></span>
                             </li>
                         </ul>
                     </li>
@@ -48,19 +49,19 @@
                               class="glyphicon glyphicon-plus pull-right"></span>
                     </li>
                     <li ng-repeat="project in projects" class="list-group-item">
-                        <span ng-click="deleteProject(project)"
+                        <span ng-click="deleteProject(project)" title="delete project"
                               class="glyphicon glyphicon-remove pull-right"></span>
-                        <span ng-click="selectProject(project)"
+                        <span ng-click="selectProject(project)" title="select project"
                               class="glyphicon glyphicon-cog pull-right"></span>
-                        <span ng-click="addProjectToUser(project)"
+                        <span ng-click="addProjectToUser(project)" title="add project to selected user"
                               class="glyphicon glyphicon-plus pull-right"></span>
-                        <span ng-click="removeProjectFromUser(Project)"
+                        <span ng-click="removeProjectFromUser(project)" title="remove project from selected user"
                               class="glyphicon glyphicon-minus pull-right"></span>
                         {{project.name}}
                         <ul>
                             <li ng-repeat="user in project.users">
                                 {{user.username}}
-                                <span class="glyphicon glyphicon-remove"></span>
+                                <span ng-click="removeUserFromProject(user)" class="glyphicon glyphicon-remove"></span>
                             </li>
                         </ul>
                     </li>

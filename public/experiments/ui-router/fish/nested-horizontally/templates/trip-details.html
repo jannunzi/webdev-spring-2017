@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xs-4">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                {{model.trip.title}}
+            </li>
+            <li class="list-group-item">
+                <a ui-sref="trip.details.fish({tripId: model.tripId})">Fish</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-8">
+        <ui-view></ui-view>
+    </div>
+</div>

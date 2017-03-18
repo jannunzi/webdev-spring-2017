@@ -1,0 +1,17 @@
+<ul class="nav nav-pills jga-sortable-horizontal">
+    <li ng-repeat="lecture in model.lectures"
+        ui-sref-active="active"
+        ui-sref="module.details.lectures.detail({lectureId: lecture._id})">
+        <a>
+            <span class="glyphicon glyphicon-remove pull-right margin-left-5px"></span>
+            {{lecture.title}}
+        </a>
+    </li>
+    <li>
+        <a>
+        <span class="glyphicon glyphicon-plus"></span>
+        </a>
+    </li>
+</ul>
+<br/>
+<ui-view></ui-view>

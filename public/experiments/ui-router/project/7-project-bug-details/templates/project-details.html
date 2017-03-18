@@ -1,0 +1,23 @@
+<h3>Project Details</h3>
+
+<h4>
+    {{model.project.title}} / {{model.projectId}}
+</h4>
+
+<h3>Bugs</h3>
+
+<div class="row">
+    <div class="col-xs-6">
+        <ul class="list-group">
+            <li class="list-group-item" ui-sref-active="active"
+                ng-repeat="bug in model.project.bugs">
+                <a ui-sref="project.details.bug({bugId: bug._id})">{{bug.title}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-6">
+        <ui-view></ui-view>
+    </div>
+</div>
+
+{{model.project}}

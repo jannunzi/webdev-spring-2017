@@ -1,0 +1,14 @@
+[
+  {"_id": "000", "title": "Fish 000", "tripId": "123", "weight": 12.91, "length": 23.31},
+  {"_id": "123", "title": "Fish 123", "tripId": "123", "weight": 13.82, "length": 24.32},
+  {"_id": "234", "title": "Fish 234", "tripId": "123", "weight": 14.73, "length": 25.33},
+  {"_id": "345", "title": "Fish 345", "tripId": "234", "weight": 15.64, "length": 26.34},
+  {"_id": "456", "title": "Fish 456", "tripId": "234", "weight": 16.55, "length": 27.35},
+  {"_id": "567", "title": "Fish 567", "tripId": "234", "weight": 17.46, "length": 38.46},
+  {"_id": "678", "title": "Fish 678", "tripId": "345", "weight":  8.37, "length": 39.57},
+  {"_id": "789", "title": "Fish 789", "tripId": "345", "weight": 29.28, "length": 30.68},
+  {"_id": "890", "title": "Fish 890", "tripId": "345", "weight": 20.39, "length": 31.49},
+  {"_id": "987", "title": "Fish 987", "tripId": "456", "weight": 21.48, "length": 32.30},
+  {"_id": "321", "title": "Fish 321", "tripId": "456", "weight": 22.57, "length": 33.21},
+  {"_id": "432", "title": "Fish 432", "tripId": "456", "weight": 23.66, "length": 34.34}
+]

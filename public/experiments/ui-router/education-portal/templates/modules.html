@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-xs-3">
+        <ul class="list-group">
+            <li class="list-group-item">
+                Modules
+            </li>
+            <li class="list-group-item" ng-repeat="module in model.modules">
+                <a ui-sref="module.details({moduleId: module._id})">
+                    {{module.title}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-9">
+        <ui-view></ui-view>
+    </div>
+</div>

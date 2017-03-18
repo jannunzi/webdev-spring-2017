@@ -1,0 +1,6 @@
+[
+  {"_id": "123", "title": "Project 123", "bugs": [{"_id": "123", "title": "Bug 123 123"}, {"_id": "234", "title": "Bug 123 234"}, {"_id": "345", "title": "Bug 123 345"}]},
+  {"_id": "234", "title": "Project 234", "bugs": [{"_id": "456", "title": "Bug 234 456"}, {"_id": "567", "title": "Bug 234 567"}, {"_id": "678", "title": "Bug 234 678"}]},
+  {"_id": "345", "title": "Project 345", "bugs": [{"_id": "321", "title": "Bug 345 321"}, {"_id": "432", "title": "Bug 345 432"}, {"_id": "543", "title": "Bug 345 543"}]},
+  {"_id": "456", "title": "Project 456", "bugs": [{"_id": "654", "title": "Bug 456 654"}, {"_id": "765", "title": "Bug 456 765"}, {"_id": "876", "title": "Bug 456 876"}]}
+]

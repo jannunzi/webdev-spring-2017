@@ -1,0 +1,18 @@
+<ul class="list-group">
+    <li class="list-group-item active">
+        Fish
+        <a ui-sref="trip.details({tripId: model.tripId})">
+            <span class="glyphicon glyphicon-remove pull-right"></span>
+        </a>
+    </li>
+    <li ng-repeat="fish in model.fishes"
+        ui-sref-active="active"
+        class="list-group-item">
+        <a ui-sref="trip.details.fish.details({fishId: fish._id})">
+            {{fish.title}}
+            <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+        </a>
+    </li>
+</ul>
+
+<ui-view></ui-view>

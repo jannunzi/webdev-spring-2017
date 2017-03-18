@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-3">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                Trips
+            </li>
+            <li ng-repeat="trip in model.trips"
+                ui-sref-active="active"
+                class="list-group-item">
+                <a ui-sref="trip.details({tripId: trip._id})">
+                    {{trip.title}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-9">
+        <ui-view></ui-view>
+    </div>
+</div>
+

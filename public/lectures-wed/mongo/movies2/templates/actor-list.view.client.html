@@ -1,0 +1,33 @@
+<h2>Actors</h2>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <input ng-model="model.actor.name" class="form-control"/>
+        <span ng-click="model.createActor(model.actor)" style="position: relative; top:-25px; right: 10px;" class="glyphicon glyphicon-plus pull-right"/>
+    </li>
+    <li ng-click="model.selectedActorId=actor._id"
+        ng-repeat="actor in model.actors"
+        ng-class="{'active': actor._id == model.selectedActorId}"
+        class="list-group-item">
+        {{actor.name}}
+        <span ng-click="model.deleteActor(actor._id)" class="glyphicon glyphicon-remove pull-right"></span>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="movie in actor.movies">
+                {{movie.name}}
+                <span ng-click="model.deleteMovieFromActor(actor._id, movie._id)" class="glyphicon glyphicon-remove pull-right"></span>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<h2>Movie</h2>
+<ul class="list-group">
+    <li class="list-group-item">
+        <button class="btn btn-block btn-primary" ng-click="model.addSelectedMovieToSelectedActor(model.selectedMovieId, model.selectedActorId)">Add Movie To Actor</button>
+    </li>
+    <li ng-class="{'active': movie._id == model.selectedMovieId}" ng-click="model.selectedMovieId = movie._id" ng-repeat="movie in model.movies" class="list-group-item">
+        {{movie.name}}
+        <span ng-click="model.deleteMovie(movie._id)" class="glyphicon glyphicon-remove pull-right"></span>
+        {{movie.actors}}
+    </li>
+</ul>

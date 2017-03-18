@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../../../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../../../js/angular.1.6.2.js"></script>
+    <script src="../../../../js/vendor/ui-routers/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/project-list.controller.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="ProjectApp">
+    <div class="container-fluid">
+        <h1>Projects</h1>
+
+        <a ui-sref="project">Projects</a>
+
+        <ui-view></ui-view>
+
+    </div>
+</body>
+</html>

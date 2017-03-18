@@ -1,0 +1,15 @@
+<ul class="list-group">
+    <li class="list-group-item active">
+        <label>Search OMDB</label>
+    </li>
+    <li class="list-group-item">
+        <input ng-model="title" class="form-control"/>
+    </li>
+    <li class="list-group-item">
+        <button ng-click="model.search(title)" class="btn btn-block btn-primary">
+            Search
+        </button>
+    </li>
+</ul>
+
+<ui-view></ui-view>

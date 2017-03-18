@@ -1,0 +1,15 @@
+<h1>Users</h1>
+<ul class="list-group">
+    <li class="list-group-item" style="background-color: #000088">
+        <input ng-model="model.user.username" class="form-control"/>
+        <span ng-click="model.createUser(model.user)" style="position:relative;top:-25px; right:10px; color:black;"
+              class="glyphicon glyphicon-plus pull-right"></span>
+        <span ng-click="model.updateUser(model.user._id, model.user)" style="position:relative;top:-25px; right:15px; color:black;"
+              class="glyphicon glyphicon-ok pull-right"></span>
+    </li>
+    <li ng-repeat="user in model.users" class="list-group-item" ng-class="{'active': user._id === model.user._id}">
+        <span ng-click="model.deleteUser(user._id)" style="position: relative;right: 10px;" class="glyphicon glyphicon-remove pull-right"></span>
+        <span ng-click="model.selectUser(user._id)" style="position: relative;right: 15px;" class="glyphicon glyphicon-cog pull-right"></span>
+        <a href="#!/user/{{user._id}}/website">{{user.username}}</a>
+    </li>
+</ul>

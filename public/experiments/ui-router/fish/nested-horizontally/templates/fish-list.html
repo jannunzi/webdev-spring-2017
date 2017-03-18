@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-xs-6">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                Fish
+            </li>
+            <li ng-repeat="fish in model.fishes"
+                ui-sref-active="active"
+                class="list-group-item">
+                <a ui-sref="trip.details.fish.details({fishId: fish._id})">{{fish.title}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-6">
+        <ui-view></ui-view>
+    </div>
+</div>

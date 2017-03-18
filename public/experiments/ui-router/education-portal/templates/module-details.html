@@ -1,0 +1,20 @@
+<ul class="list-group">
+    <li class="list-group-item">
+        {{model.module.title}}
+    </li>
+    <li class="list-group-item">
+        <ul class="nav nav-tabs">
+            <li ui-sref-active="active">
+                <a ui-sref="module.details.overview">Overview</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="module.details.lectures">Lectures</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="module.details.assignments">Assignments</a>
+            </li>
+        </ul>
+        <br/>
+        <ui-view></ui-view>
+    </li>
+</ul>

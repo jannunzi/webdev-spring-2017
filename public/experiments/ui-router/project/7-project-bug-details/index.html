@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../../../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../../../js/angular.1.6.2.js"></script>
+    <script src="../../../../js/vendor/ui-routers/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/project-list.controller.js"></script>
+    <script src="controllers/project-details.controller.js"></script>
+    <script src="controllers/bug-details.controller.js"></script>
+    <script src="services/project.services.js"></script>
+    <script src="services/bug.services.js"></script>
+    <style>
+        ul.nav.nav-tabs li {
+            cursor: pointer;
+        }
+
+        li.list-group-item {
+            padding: 0px;
+        }
+
+        li.list-group-item a {
+            display: block;
+            padding: 10px 15px;
+        }
+
+        ul.nav.nav-tabs li.active a {
+            background-color: #337ab7;
+            border-color: #337ab7;
+            color: white;
+        }
+
+        li.list-group-item.active a {
+            color: white;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="ProjectApp">
+    <div class="container-fluid">
+        <h1>Projects</h1>
+
+        <a ui-sref="project">Projects</a>
+
+        <ui-view></ui-view>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+<div class="row">
+    <div class="col-xs-6">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                <label>Search Results</label>
+            </li>
+            <li ng-repeat="movie in model.results" class="list-group-item">
+                <a ui-sref="search.results.details({imdbID: movie.imdbID})">
+                    <img ng-src="{{movie.Poster}}" height="25px"/>
+                    {{movie.Title}}
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-6">
+        <ui-view></ui-view>
+    </div>
+</div>

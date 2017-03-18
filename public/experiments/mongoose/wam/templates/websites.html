@@ -1,0 +1,16 @@
+<h1>Websites</h1>
+<ul class="list-group">
+    <li class="list-group-item" style="background-color: #000088">
+        <input ng-model="model.website.name"
+               class="form-control"/>
+        <span ng-click="model.createWebsite(model.website)" style="position:relative;top:-25px; right:10px; color:black;"
+              class="glyphicon glyphicon-plus pull-right"></span>
+        <span ng-click="model.updateWebsite(model.website._id, model.website)" style="position:relative;top:-25px; right:15px; color:black;"
+              class="glyphicon glyphicon-ok pull-right"></span>
+    </li>
+    <li ng-repeat="website in model.websites" class="list-group-item" ng-class="{'active': website._id === model.website._id}">
+        <span ng-click="model.deleteWebsite(website._id)" style="position: relative;right: 10px;" class="glyphicon glyphicon-remove pull-right"></span>
+        <span ng-click="model.selectWebsite(website._id)" style="position: relative;right: 15px;" class="glyphicon glyphicon-cog pull-right"></span>
+        <a href="#!/user/{{user._id}}/website/{{website._id}}/page">{{website.name}}</a>
+    </li>
+</ul>

@@ -1,0 +1,11 @@
+<h1>Trip List</h1>
+
+<ul class="list-group">
+    <li ng-repeat="trip in model.trips" class="list-group-item">
+        <a ui-sref="trip-details({tripId: trip._id})">
+            {{trip.title}}
+        </a>
+    </li>
+</ul>
+
+{{model.trips}}

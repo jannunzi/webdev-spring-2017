@@ -1,0 +1,12 @@
+<h1>Actors</h1>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <input ng-model="model.actor.name" class="form-control"/>
+        <span ng-click="model.createActor(model.actor)"
+              style="position: relative; top:-25px; right: 10px;"
+              class="glyphicon glyphicon-plus pull-right"></span>
+    </li>
+</ul>
+
+{{model.actors}}

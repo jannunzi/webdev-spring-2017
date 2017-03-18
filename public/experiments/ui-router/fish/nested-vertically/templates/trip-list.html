@@ -1,0 +1,14 @@
+<ul class="list-group">
+    <li class="list-group-item active">
+        <label>Trips</label>
+    </li>
+    <li ng-repeat="trip in model.trips"
+        ui-sref-active="active"
+        class="list-group-item">
+        <a ui-sref="trip.details({tripId: trip._id})">
+            {{trip.title}}
+            <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+        </a>
+    </li>
+</ul>
+<ui-view></ui-view>

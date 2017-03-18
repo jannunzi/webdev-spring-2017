@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../js/angular.1.6.2.js"></script>
+    <script src="flickr.js"></script>
+    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body ng-app="FlickrApp">
+    <div class="container-fluid" ng-controller="flickrController as model">
+        <h1>Search</h1>
+        <input ng-model="text" class="form-control"/>
+        <button ng-click="model.flickrPhotosSearch(text)" class="btn btn-block btn-primary">Search</button>
+
+        <br/>
+
+        <div class="row">
+            <div style="padding-right:0px;padding-bottom: 15px;" class="col-xs-1" ng-repeat="photo in model.photos">
+                <img style="width: 100%;" ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_s.jpg"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

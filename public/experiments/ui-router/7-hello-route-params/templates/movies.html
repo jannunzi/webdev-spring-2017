@@ -1,0 +1,12 @@
+<h2>Movies</h2>
+
+<ul class="list-group">
+    <li class="list-group-item active">
+        <b>Movie Title</b>
+    </li>
+    <li ng-repeat="movie in movies" class="list-group-item">
+        <a ui-sref="movie({movieId: movie._id})">
+            {{movie.title}}
+        </a>
+    </li>
+</ul>

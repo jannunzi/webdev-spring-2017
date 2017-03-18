@@ -1,0 +1,25 @@
+<ul class="list-group" ng-if="model.trip">
+    <li class="list-group-item active">
+        <label>{{model.trip.title}}</label>
+        <a ui-sref="trip">
+            <span class="glyphicon glyphicon-remove pull-right"></span>
+        </a>
+    </li>
+    <li class="list-group-item">
+        {{model.trip.where}}
+    </li>
+    <li class="list-group-item">
+        {{model.trip.longitude}}
+    </li>
+    <li class="list-group-item">
+        {{model.trip.latitude}}
+    </li>
+    <li class="list-group-item" ui-sref-active="active">
+        <a ui-sref="trip.details.fish({tripId: model.tripId})">
+            <label>Fish</label>
+            <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+        </a>
+    </li>
+</ul>
+
+<ui-view></ui-view>

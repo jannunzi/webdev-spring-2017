@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../../js/angular.1.6.2.js"></script>
+    <script src="../../../js/angular-route.1.6.2.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/actor.controller.client.js"></script>
+    <script src="services/actor.service.client.js"></script>
+    <script src="controllers/movie.controller.client.js"></script>
+    <script src="services/movie.service.client.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="movies">
+    <div class="container-fluid">
+        <h1>Movie App</h1>
+        <a href="#!/actor">Actors</a> |
+        <a href="#!/movie">Movies</a>
+        <ng-view></ng-view>
+    </div>
+</body>
+</html>

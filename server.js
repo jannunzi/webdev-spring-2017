@@ -33,10 +33,22 @@ require('./experiments/upload/app')(app);
 require("./lectures/mongo/movies")(app);
 // require('./lectures-wed/mongo/movies')(app);
 require('./experiments/mongoose/projects/app')(app);
+require('./experiments/mongoose/wam/app')(app);
+require('./experiments/flickr/flickr.service.server')(app);
+require('./experiments/mongoose/movies/app')(app);
+
+require('./lectures-wed/mongo/movies/app')(app);
+
+// require('./experiments/mongoose/university/app')(app);
+
+require('./lectures/mongoose/university/university');
+
+require('./experiments/postgre/test123')(app);
+require('./experiments/postgre/projects/app');
 
 var assignment = require("./assignment/app.js");
 assignment(app);
 
-var port      = process.env.PORT || 4000;
+var port      = process.env.PORT || 3000;
 
 app.listen(port);

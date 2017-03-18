@@ -1,0 +1,11 @@
+<h2>Movie</h2>
+<ul class="list-group">
+    <li class="list-group-item">
+        <input ng-model="model.movie.name" class="form-control"/>
+        <span ng-click="model.createMovie(model.movie)" style="position: relative; top:-25px; right: 10px;" class="glyphicon glyphicon-plus pull-right"/>
+    </li>
+    <li ng-repeat="movie in model.movies" class="list-group-item">
+        {{movie.name}}
+        <span ng-click="model.deleteMovie(movie._id)" class="glyphicon glyphicon-remove pull-right"></span>
+    </li>
+</ul>

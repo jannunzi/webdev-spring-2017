@@ -1,0 +1,9 @@
+<h1>Fish List</h1>
+
+<ul class="list-group">
+    <li ng-repeat="fish in model.fishes" class="list-group-item">
+        <a ui-sref="fish-details({fishId: fish._id})">{{fish.title}}</a>
+    </li>
+</ul>
+
+{{model.fishes}}

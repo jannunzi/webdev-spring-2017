@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "123",
+    "title": "Module 1",
+    "overview": "Lorem ipsum",
+    "lectures": [
+      {"_id": "123", "title": "Lecture 123", "overview": "Lorem ipsum 123",
+        "widgets": [
+          {"type": "heading", "size": 2, "text": "Heading Size 2"},
+          {"type": "code", "text": "function add(a, b) {\n\treturn a + b;\n}"},
+          {"type": "image", "src": "http://lorempixel.com/400/200"},
+          {"type": "youtube", "src": "https://youtu.be/wD9niy_e_30"},
+          {"type": "html", "html": "<h4>Hello World</h4>"}
+        ]
+      },
+      {"_id": "234", "title": "Lecture 234", "overview": "Lorem ipsum 234"},
+      {"_id": "345", "title": "Lecture 345", "overview": "Lorem ipsum 345"},
+      {"_id": "456", "title": "Lecture 456", "overview": "Lorem ipsum 456"}
+    ],
+    "assignments": [
+      {"_id": "123", "title": "Assignment 123", "overview": "Lorem ipsum 123"},
+      {"_id": "234", "title": "Assignment 234", "overview": "Lorem ipsum 234"},
+      {"_id": "345", "title": "Assignment 345", "overview": "Lorem ipsum 345"},
+      {"_id": "456", "title": "Assignment 456", "overview": "Lorem ipsum 456"}
+    ]
+  },
+  {"_id": "234", "title": "Module 2"},
+  {"_id": "345", "title": "Module 3"},
+  {"_id": "456", "title": "Module 4"}
+]

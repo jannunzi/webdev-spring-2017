@@ -1,0 +1,6 @@
+[
+  {"_id": "123", "title": "Trip 123", "latitude": 12.21, "longitude": 21.32, "where": "Plum Island"},
+  {"_id": "234", "title": "Trip 234", "latitude": 23.32, "longitude": 23.34, "where": "Kennebunk Port"},
+  {"_id": "345", "title": "Trip 345", "latitude": 34.43, "longitude": 43.54, "where": "St. Thomas"},
+  {"_id": "456", "title": "Trip 456", "latitude": 45.54, "longitude": 32.43, "where": "Turk and Caicos"}
+]
