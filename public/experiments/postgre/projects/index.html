@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../../js/angular.1.6.2.js"></script>
+    <script src="app.js"></script>
+    <link href="../../../css/bootstrap.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="project">
+    <div ng-controller="projectController as model" class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6">
+                <h1>Developers</h1>
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        style="background-color: #2b669a">
+                        <input ng-model="model.developer.name"
+                               class="form-control"/>
+                        <span ng-click="model.createDeveloper(model.developer)"
+                              style="position: relative;top:-25px;right: 10px;"
+                              class="glyphicon glyphicon-plus pull-right"></span>
+                        <span ng-click="model.updateDeveloper(model.developer.id, model.developer)"
+                              style="position: relative;top:-25px;right: 20px;"
+                              class="glyphicon glyphicon-ok pull-right"></span>
+                    </li>
+                    <li ng-click="model.selectDeveloper(developer);"
+                        ng-class="{'active': model.developer.id==developer.id}"
+                        class="list-group-item"
+                        ng-repeat="developer in model.developers">
+                        {{developer.name}}
+                        <span ng-click="model.deleteDeveloper(developer.id)"
+                              class="glyphicon glyphicon-remove pull-right"></span>
+                        <span ng-click="model.assignDeveloperToProject(developer.id, model.project.id)"
+                              class="glyphicon glyphicon-chevron-right pull-right" style="position:relative;right: 10px;"></span>
+                    </li>
+                </ul>
+                <ul class="list-group" ng-show="model.assignedProjects.length > 0">
+                    <li class="list-group-item active">
+                        Assigned Projects
+                    </li>
+                    <li ng-repeat="project in model.assignedProjects" class="list-group-item">
+                        {{project.name}}
+                        <span ng-click="model.unassignDeveloperFromProject(model.developer.id, project.id)"
+                              class="glyphicon glyphicon-remove pull-right"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <h1>Projects</h1>
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        style="background-color: #2b669a">
+                        <input ng-model="model.project.name"
+                               class="form-control"/>
+                        <span ng-click="model.createProject(model.project)"
+                              style="position: relative;top:-25px;right: 10px;"
+                              class="glyphicon glyphicon-plus pull-right"></span>
+                        <span ng-click="model.updateProject(model.project.id, model.project)"
+                              style="position: relative;top:-25px;right: 20px;"
+                              class="glyphicon glyphicon-ok pull-right"></span>
+                    </li>
+                    <li ng-click="model.selectProject(project)"
+                        ng-class="{'active': model.project.id==project.id}"
+                        class="list-group-item"
+                        ng-repeat="project in model.projects">
+                        {{project.name}}
+                        <span ng-click="model.deleteProject(project.id)"
+                              class="glyphicon glyphicon-remove pull-right"></span>
+                    </li>
+                </ul>
+                <ul class="list-group" ng-show="model.assignedDevelopers.length > 0">
+                    <li class="list-group-item active">
+                        Assigned Developers
+                    </li>
+                    <li ng-repeat="developer in model.assignedDevelopers" class="list-group-item">
+                        {{developer.name}}
+                        <span ng-click="model.unassignDeveloperFromProject(developer.id, model.project.id)" class="glyphicon glyphicon-remove pull-right"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

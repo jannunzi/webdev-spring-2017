@@ -37,14 +37,19 @@ require('./experiments/mongoose/wam/app')(app);
 require('./experiments/flickr/flickr.service.server')(app);
 require('./experiments/mongoose/movies/app')(app);
 
-require('./lectures-wed/mongo/movies/app')(app);
+// require('./lectures-wed/mongo/movies/app')(app);
 
 // require('./experiments/mongoose/university/app')(app);
 
-require('./lectures/mongoose/university/university');
+// require('./lectures/mongoose/university/university');
 
-require('./experiments/postgre/test123')(app);
-require('./experiments/postgre/projects/app');
+// require('./experiments/postgre/test123')(app);
+// require('./experiments/postgre/projects/app')(app);
+// require('./experiments/postgre/movies/app')(app);
+
+require('./lectures/postgre/movies/services/actor.service.server')(app);
+require('./lectures/postgre/movies/services/movie.service.server')(app);
+
 
 var assignment = require("./assignment/app.js");
 assignment(app);

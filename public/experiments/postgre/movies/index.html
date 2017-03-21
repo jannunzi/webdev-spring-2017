@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../../js/angular.1.6.2.js"></script>
+    <script src="app.js"></script>
+    <link href="../../../css/bootstrap.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="movies">
+    <div ng-controller="moviesController as model" class="container-fluid">
+        <br/>
+        <div class="row">
+            <div class="col-xs-6">
+                <ul class="list-group">
+                    <li class="list-group-item active">
+                        Actors
+                    </li>
+                    <li class="list-group-item">
+                        <input ng-model="model.actor.name" class="form-control"/>
+                        <span  ng-click="model.createActor(model.actor)"
+                               style="position:relative;top: -25px; right: 10px;"
+                               class="glyphicon glyphicon-plus pull-right"></span>
+                        <span  ng-click="model.updateActor(model.actor.id, model.actor)"
+                               style="position: relative;top: -25px; right: 20px;"
+                               class="glyphicon glyphicon-ok pull-right"></span>
+                    </li>
+                    <li ng-click="model.selectActor(actor)"
+                        ng-class="{'active': actor.id == model.actor.id}"
+                        ng-repeat="actor in model.actors"
+                        class="list-group-item">
+                        {{actor.name}}
+                        <span ng-click="model.deleteActor(actor.id)"
+                              class="glyphicon glyphicon-remove pull-right"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <ul class="list-group">
+                    <li class="list-group-item active">
+                        Movies
+                    </li>
+                    <li class="list-group-item">
+                        <input ng-model="model.movie.title" class="form-control"/>
+                        <span  ng-click="model.createMovie(model.movie)"
+                               style="position:relative;top: -25px; right: 10px;"
+                               class="glyphicon glyphicon-plus pull-right"></span>
+                        <span  ng-click="model.updateMovie(model.movie.id, model.movie)"
+                               style="position: relative;top: -25px; right: 20px;"
+                               class="glyphicon glyphicon-ok pull-right"></span>
+                    </li>
+                    <li ng-click="model.selectMovie(movie)"
+                        ng-class="{'active': movie.id == model.movie.id}"
+                        ng-repeat="movie in model.movies"
+                        class="list-group-item">
+                        {{movie.title}}
+                        <span ng-click="model.deleteMovie(movie.id)"
+                              class="glyphicon glyphicon-remove pull-right"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
