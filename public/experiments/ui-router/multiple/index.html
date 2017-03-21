@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../../js/angular.1.6.2.js"></script>
+    <script src="../js/vendor/angular-ui-router-alpha.js"></script>
+    <link href="../../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="hello.js"></script>
+    <script src="controllers/hello.controller.js"></script>
+    <script src="controllers/bye.controller.js"></script>
+    <script src="controllers/movies.controller.js"></script>
+    <script src="controllers/movie.controller.js"></script>
+    <script src="services/movie.service.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="HelloApp">
+    <div class="container-fluid">
+        <h1>Hello Again</h1>
+
+        <a ui-sref="hello">Hello</a> |
+        <a ui-sref="bye">Bye</a> |
+        <a ui-sref="movies">Movies!!</a>
+
+        <div ui-view="hello1"></div>
+        <div ui-view="hello2"></div>
+        <div ui-view="hello3"></div>
+        <div ui-view="bye"></div>
+
+    </div>
+</body>
+</html>
