@@ -1,5 +1,6 @@
-var express = require('express');
-var app = express();
+// var express = require('express');
+// var app = express();
+var app = require('./express');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -10,7 +11,7 @@ var cookieParser  = require('cookie-parser');
 var session       = require('express-session');
 
 app.use(session({
-    secret: 'this is the secret',
+    secret: 'this is the secret', // process.env.SESSION_SECRET
     resave: true,
     saveUninitialized: true
 }));
@@ -20,9 +21,9 @@ app.use(passport.session());
 
 app.set('view engine', 'ejs');
 
-app.use(express.static(__dirname + '/public'));
+app.use(app.express.static(__dirname + '/public'));
 
-require ("./test/app.js")(app);
+// require ("./test/app.js")(app);
 require("./todo/app")(app);
 require("./blog/app")(app);
 require('./experiments/upload/app')(app);
@@ -47,9 +48,16 @@ require('./experiments/mongoose/movies/app')(app);
 // require('./experiments/postgre/projects/app')(app);
 // require('./experiments/postgre/movies/app')(app);
 
-require('./lectures/postgre/movies/services/actor.service.server')(app);
-require('./lectures/postgre/movies/services/movie.service.server')(app);
+// require('./lectures/postgre/movies/services/actor.service.server')(app);
+// require('./lectures/postgre/movies/services/movie.service.server')(app);
 
+// require('./experiments/passport/local/services/user.service.server');
+
+// require('./lectures-wed/passportjs/services/user.service.server');
+
+require('./lectures/passportjs/services/user.service.server');
+
+// require('./is3500/movie/app')(app);
 
 var assignment = require("./assignment/app.js");
 assignment(app);
