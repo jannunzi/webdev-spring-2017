@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../../css/bootstrap.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+    <script src="../../js/jquery.js"></script>
+    <script>
+        $(init);
+
+        var selecteMovieId = null;
+
+        function init() {
+            searchByTitle('avatar');
+            $('#searchBtn').click(searchByTitle);
+            $('#favoriteStar').click(favoriteMovie);
+        }
+        
+        function favoriteMovie() {
+            var url = '/is3500/movie/user/1/favorites/'+selecteMovieId;
+            $.ajax({
+                url: url,
+                success: renderSearchResults
+            });
+        }
+
+        function searchByTitle(title) {
+//            if(!title) {
+                title = $('#titleFld').val();
+//            }
+            var url = "http://www.omdbapi.com/?s="+title;
+            $.ajax({
+                url: url,
+                success: renderSearchResults
+            });
+        }
+
+        function renderSearchResults(results) {
+            console.log(results);
+            var movies = results.Search;
+            var ul = $('#movieSearchResults');
+            ul.empty();
+            movies.forEach(function (movie) {
+                console.log(movie);
+                var img = $('<img>');
+                img.attr('src', movie.Poster);
+                img.css('width', 20);
+                var li = $('<li class="list-group-item">');
+                li.attr('id', movie.imdbID);
+                li.append(img);
+                li.append(movie.Title);
+                li.click(searchDetails);
+                ul.append(li);
+            });
+        }
+        
+        function searchDetails(event) {
+            selecteMovieId = $(event.currentTarget).attr('id');
+            console.log(selecteMovieId);
+            var url = "http://www.omdbapi.com/?i="+selecteMovieId;
+            $.ajax({
+                url: url,
+                success: renderDetails
+            });
+        }
+
+        function renderDetails(details) {
+            console.log(details);
+            $('#title').html(details.Title);
+            $('#plot').html(details.Plot);
+            $('#poster').attr('src', details.Poster);
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6">
+                <h1>
+                    Movies
+                </h1>
+                <input id="titleFld" class="form-control"/>
+                <button id="searchBtn" class="btn btn-block btn-primary">Search</button>
+                <ul id="movieSearchResults" class="list-group">
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <h1>
+                    Movie Details
+                    <span id="favoriteStar" class="glyphicon glyphicon-star-empty pull-right"></span>
+                </h1>
+                <h2 id="title"></h2>
+                <p id="plot"></p>
+                <img id="poster">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
