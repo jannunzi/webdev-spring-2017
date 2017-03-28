@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../../../js/angular.1.6.2.js"></script>
+    <script src="../../../js/vendor/ui-routers/angular-ui-router.js"></script>
+    <link href="../../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="app.js"></script>
+    <script src="views/navigation/controllers/module.controller.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="courseApp">
+    <div class="container-fluid">
+        <br/>
+        <div class="row">
+            <div class="col-xs-4">
+                <ui-view name="navigation"></ui-view>
+            </div>
+            <div class="col-xs-8">
+                <ui-view name="content"></ui-view>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
