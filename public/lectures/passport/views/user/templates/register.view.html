@@ -1,0 +1,21 @@
+<h1>Register</h1>
+<input class="form-control" ng-model="user.username"/>
+<input class="form-control" ng-model="user.password"/>
+<input class="form-control" ng-model="user.password2"/>
+<button ng-click="model.register(user)"
+        class="btn btn-block btn-primary">
+    Register
+</button>
+
+<a href="#!/login" class="btn btn-success btn-block">
+    Cancel
+</a>
+
+<div class="alert alert-danger" ng-show="model.error">
+    {{model.error}}
+</div>
+
+<div class="alert alert-info" ng-show="model.message">
+    {{model.message}}
+    {{model.user}}
+</div>
