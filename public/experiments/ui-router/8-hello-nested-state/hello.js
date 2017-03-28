@@ -17,18 +17,18 @@
                 templateUrl: 'templates/bye.html',
                 controller: 'ByeController'
             },
-{
-    name: 'movies',
-    url: '/movies',
-    templateUrl: 'templates/movies.html',
-    controller: 'MoviesController'
-},
-{
-    name: 'movies.details',
-    url: '/:movieId', // or '/movies/:movieId' or '/movies/{movieId}' or '/{movieId}'
-    templateUrl: 'templates/movie.html',
-    controller: 'MovieController'
-}
+            {
+                name: 'movies',
+                url: '/movies',
+                templateUrl: 'templates/movies.html',
+                controller: 'MoviesController'
+            },
+            {
+                name: 'movies.details',
+                url: '/:movieId', // or '/movies/:movieId' or '/movies/{movieId}' or '/{movieId}'
+                templateUrl: 'templates/movie.html',
+                controller: 'MovieController'
+            }
         ];
 
         states.forEach(function (state) {
