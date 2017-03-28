@@ -51,11 +51,11 @@ require('./experiments/mongoose/movies/app')(app);
 // require('./lectures/postgre/movies/services/actor.service.server')(app);
 // require('./lectures/postgre/movies/services/movie.service.server')(app);
 
-// require('./experiments/passport/local/services/user.service.server');
+require('./experiments/passport/local/services/user.service.server');
 
 // require('./lectures-wed/passportjs/services/user.service.server');
 
-require('./lectures/passportjs/services/user.service.server');
+// require('./lectures/passportjs/services/user.service.server');
 
 // require('./is3500/movie/app')(app);
 

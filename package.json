@@ -6,10 +6,12 @@
   "dependencies": {
     "angular-ui-router": "^0.4.2",
     "body-parser": "^1.15.1",
+    "cheerio": "^0.22.0",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.3",
     "express": "^4.13.4",
     "express-session": "^1.14.2",
+    "fs-cheerio": "^2.0.1",
     "mongojs": "^2.4.0",
     "mongoose": "^4.4.15",
     "multer": "^1.2.0",
@@ -17,7 +19,8 @@
     "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
     "pg": "^6.1.4",
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "xslt4node": "^0.3.2"
   },
   "devDependencies": {},
   "scripts": {

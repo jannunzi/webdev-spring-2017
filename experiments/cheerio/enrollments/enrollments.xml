@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Enrollments>
+    <CourseTaken sname="ian" gradyear="2009" title="calculus" yeartaken="2006" grade="A" />
+    <CourseTaken sname="ian" gradyear="2009" title="shakespeare" yeartaken="2006" grade="C" />
+    <CourseTaken sname="ian" gradyear="2009" title="popculture" yeartaken="2007" grade="B+" />
+    <CourseTaken sname="ben" gradyear="2010" title="shakespeare" yeartaken="2006" grade="A-" />
+    <CourseTaken sname="ben" gradyear="2010" title="databases" yeartaken="2007" grade="A" />
+    <CourseTaken sname="tom" gradyear="2010" title="calculus" yeartaken="2006" grade="C-" />
+</Enrollments>
