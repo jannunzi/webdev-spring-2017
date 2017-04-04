@@ -12,8 +12,17 @@
                         templateUrl: 'views/navigation/templates/navigation.view.html',
                         controller: 'moduleController',
                         controllerAs: 'model'
-                    },
+                    }
+                    // ,content: {
+                    //     templateUrl: 'views/content/templates/content.view.html'
+                    // }
+                }
+            }
+            ,{
+                name: 'main.content',
+                views: {
                     content: {
+                        url: '/:moduleId',
                         templateUrl: 'views/content/templates/content.view.html'
                     }
                 }

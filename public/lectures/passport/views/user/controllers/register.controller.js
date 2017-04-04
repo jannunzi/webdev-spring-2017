@@ -12,7 +12,7 @@
                         $location.url('/profile');
                     }
                 }, function (err) {
-                    model.error = err;
+                    model.message = err;
                 });
         }
     }

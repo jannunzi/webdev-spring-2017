@@ -5,17 +5,36 @@ var q = require('q');
 mongoose.Promise = q.Promise;
 
 var userSchema = mongoose.Schema({
-    username: String,
-    password: String,
-    firstName: String
+    username: {type: String, required: true},
+    password: {type: String, required: true},
+    firstName: String,
+    role: {type: String, enum: ['STUDENT', 'FACULTY', 'ADMIN', 'USER'], default: 'USER'}
 }, {collection: 'lectures_morning_passportjs_user'});
 
 var userModel = mongoose.model('LecturesMorningPassportJsUser', userSchema);
 userModel.createUser = createUser;
 userModel.findUserByCredentials = findUserByCredentials;
 userModel.findUserById = findUserById;
+userModel.findAllUsers = findAllUsers;
+userModel.deleteUser = deleteUser;
+userModel.updateUser = updateUser;
 
 module.exports = userModel;
+
+function updateUser(userId, user) {
+    return userModel.update(
+        {_id: userId},
+        {$set: user}
+    );
+}
+
+function deleteUser(userId) {
+    return userModel.remove({_id: userId});
+}
+
+function findAllUsers() {
+    return userModel.find();
+}
 
 function createUser(user) {
     return userModel.create(user);

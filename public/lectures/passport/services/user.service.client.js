@@ -9,6 +9,54 @@
         this.loggedin = loggedin;
         this.logout = logout;
         this.register = register;
+        this.isAdmin = isAdmin;
+        this.findAllUser = findAllUser;
+        this.deleteUser = deleteUser;
+        this.unregisterUser = unregisterUser;
+        this.updateUser = updateUser;
+        this.updateProfile = updateProfile;
+
+        function updateProfile(user) {
+            return $http.put('/api/lecture-morning/user/'+user._id, user)
+                .then(function (response) {
+                    return response.data;
+                });
+        }
+
+        function updateUser(user) {
+            return $http.put('/api/lecture-morning/admin/user/'+user._id, user)
+                .then(function (response) {
+                    return response.data;
+                });
+        }
+
+        function unregisterUser(userId) {
+            return $http.delete('/api/lecture-morning/user/'+userId)
+                .then(function (response) {
+                    return response.data;
+                });
+        }
+
+        function deleteUser(userId) {
+            return $http.delete('/api/lecture-morning/admin/user/'+userId)
+                .then(function (response) {
+                    return response.data;
+                });
+        }
+
+        function findAllUser() {
+            return $http.get('/api/lecture-morning/admin/user')
+                .then(function (response) {
+                    return response.data;
+                });
+        }
+
+        function isAdmin() {
+            return $http.post('/api/lecture-morning/isAdmin')
+                .then(function (response) {
+                    return response.data;
+                });
+        }
 
         function register(user) {
             return $http.post('/api/lecture-morning/register', user)

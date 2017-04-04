@@ -1,0 +1,19 @@
+<h1>
+    Profile
+    <a ng-if="model.currentUser.role=='ADMIN'" href="#!/admin" class="btn btn-danger pull-right">
+        Admin
+    </a>
+    <button ng-click="model.logout()" class="pull-right btn btn-danger">
+        Logout
+    </button>
+</h1>
+
+{{model.currentUser}}
+
+<input ng-model="model.currentUser.username" class="form-control" readonly/>
+
+<input ng-model="model.currentUser.firstName" class="form-control"/>
+
+<button ng-click="model.updateProfile(model.currentUser)" class="btn btn-primary btn-block">
+    Update
+    </button>

@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-3">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                Pages
+                <a ui-sref=".pagenew" style="color: white;">
+                    <span class="glyphicon glyphicon-plus pull-right"></span>
+                </a>
+            </li>
+            <li ng-repeat="page in pages" class="list-group-item">
+                <a ui-sref=".page({pageId: page._id})">
+                    {{page.title}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-9">
+        <ui-view></ui-view>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<university>
+    <college name="computer science">
+        <dean name="alice"></dean>
+        <courses>
+            <course name="web dev"></course>
+            <course name="databases"></course>
+            <course name="ai"></course>
+        </courses>
+    </college>
+    <college name="math">
+        <dean name="bob"></dean>
+        <courses>
+            <course name="calculus"></course>
+            <course name="geometry"></course>
+        </courses>
+    </college>
+    <college name="school of law">
+        <dean name="charlie"></dean>
+        <courses>
+            <course name="copyright law"></course>
+            <course name="pattents"></course>
+        </courses>
+    </college>
+</university>

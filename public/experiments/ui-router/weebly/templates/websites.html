@@ -1,0 +1,11 @@
+<ul class="list-group">
+    <li class="list-group-item active">
+        Websites
+    </li>
+    <li ng-repeat="website in websites" class="list-group-item">
+        {{website.title}}
+        <a ui-sref="website({websiteId: website._id})">
+            <span class="glyphicon glyphicon-cog pull-right"></span>
+        </a>
+    </li>
+</ul>

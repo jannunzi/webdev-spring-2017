@@ -1,0 +1,20 @@
+<h1>Admin</h1>
+
+<ul class="list-group">
+    <li class="list-group-item active">
+        Users
+    </li>
+    <li ng-repeat="user in model.users" class="list-group-item">
+        {{user.username}}
+        <span ng-click="model.deleteUser(user._id)"
+              class="glyphicon glyphicon-remove pull-right">
+        </span>
+        <span ng-click="model.updateUser(user)"
+              class="glyphicon glyphicon-ok pull-right">
+        </span>
+        <input ng-model="user.role" class="pull-right"/>
+    </li>
+</ul>
+
+
+{{model.users}}

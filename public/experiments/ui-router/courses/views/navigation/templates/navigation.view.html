@@ -1,10 +1,20 @@
-<ul class="list-group">
-    <li class="list-group-item active">
-        Modules
-    </li>
-    <li ng-repeat="module in model.modules"
-        ui-sref=""
-        class="list-group-item">
-        {{module.title}}
-    </li>
-</ul>
+<div class="row">
+    <div class="col-xs-4">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                Modules
+            </li>
+            <li ng-repeat="module in model.modules"
+                class="list-group-item">
+                <a ui-sref="main.content({moduleId: module._id})">
+                    {{module.title}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-8">
+        <ui-view name="content"></ui-view>
+    </div>
+</div>
+
+

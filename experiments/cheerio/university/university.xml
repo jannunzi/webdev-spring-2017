@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<university>
+    <college name="computer science">
+        <courses>
+            <course name="Web Dev">
+                <faculty id="123"></faculty>
+            </course>
+            <course name="Databases"></course>
+        </courses>
+        <faculty>
+            <faculty type="professor">
+
+            </faculty>
+            <faculty type="professor">
+
+            </faculty>
+            <faculty type="professor">
+
+            </faculty>
+        </faculty>
+    </college>
+    <college name="electrical engineering">
+
+    </college>
+    <college name="chemical engineering">
+
+    </college>
+</university>

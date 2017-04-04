@@ -1,8 +1,20 @@
 <h1>
     Profile
+    <a class="btn btn-danger pull-right"
+       ng-click="model.unregisterUser(model.currentUser._id)">Unregister</a>
+    <a ng-if="model.currentUser.role=='ADMIN'" class="btn btn-warning pull-right" href="#!/admin">Admin</a>
     <button ng-click="model.logout()" class="btn btn-primary pull-right">
         Logout
     </button>
 </h1>
+
+<div ng-show="model.message" class="alert alert-info">
+    {{model.message}}
+</div>
+
+<input ng-model="model.currentUser.firstName" class="form-control"/>
+<button ng-click="model.updateProfile(model.currentUser)" class="btn btn-primary btn-block">
+    Update Profile
+</button>
 
 {{model.currentUser}}
