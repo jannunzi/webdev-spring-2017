@@ -17,6 +17,65 @@ app.get   ('/api/experiments/passport/admin/user', auth, findAllUsers);
 app.put   ('/api/experiments/passport/admin/user/:userId', auth, updateUser);
 app.delete('/api/experiments/passport/admin/user/:userId', auth, deleteUser);
 
+app.get   ('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+app.get   ('/google/oauth/callback',
+    passport.authenticate('google', {
+        successRedirect: '/experiments/passport/local/#!/profile',
+        failureRedirect: '/experiments/passport/local/#!/login'
+    }));
+
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var googleConfig = {
+    clientID     : process.env.GOOGLE_CLIENT_ID_SPRING_2017,
+    clientSecret : process.env.GOOGLE_CLIENT_SECRET_SPRING_2017,
+    callbackURL  : process.env.GOOGLE_CALLBACK_URL_SPRING_2017
+};
+passport.use(new GoogleStrategy(googleConfig, googleStrategy));
+function googleStrategy(token, refreshToken, profile, done) {
+    console.log(1);
+    // console.log(profile);
+    userModel
+        .findUserByGoogleId(profile.id)
+        .then(
+            function(user) {
+                console.log(2);
+                if(user) {
+                    console.log(3);
+                    console.log(user);
+                    return done(null, user);
+                } else {
+                    console.log(4);
+                    var email = profile.emails[0].value;
+                    var emailParts = email.split("@");
+                    var newGoogleUser = {
+                        username:  emailParts[0],
+                        firstName: profile.name.givenName,
+                        lastName:  profile.name.familyName,
+                        email:     email,
+                        google: {
+                            id:    profile.id,
+                            token: token
+                        }
+                    };
+                    return userModel.createUser(newGoogleUser);
+                }
+            },
+            function(err) {
+                console.log('err');
+                console.log(err);
+                if (err) { return done(err); }
+            }
+        )
+        .then(
+            function(user){
+                return done(null, user);
+            },
+            function(err){
+                if (err) { return done(err); }
+            }
+        );
+}
+
 var LocalStrategy = require('passport-local').Strategy;
 passport.use(new LocalStrategy(localStrategy));
 userModel = require('../models/user.model.server');

@@ -6,9 +6,14 @@ mongoose.Promise = q.Promise;
 
 var userSchema = mongoose.Schema({
     username: {type: String, required: true},
-    password: {type: String, required: true},
+    password: {type: String},
     firstName: String,
-    role: {type: String, enum: ['STUDENT', 'FACULTY', 'ADMIN', 'USER'], default: 'USER'}
+    email: String,
+    role: {type: String, enum: ['STUDENT', 'FACULTY', 'ADMIN', 'USER'], default: 'USER'},
+    google: {
+        id: String,
+        token: String
+    }
 }, {collection: 'lectures_morning_passportjs_user'});
 
 var userModel = mongoose.model('LecturesMorningPassportJsUser', userSchema);
@@ -18,8 +23,13 @@ userModel.findUserById = findUserById;
 userModel.findAllUsers = findAllUsers;
 userModel.deleteUser = deleteUser;
 userModel.updateUser = updateUser;
+userModel.findUserByGoogleId = findUserByGoogleId;
 
 module.exports = userModel;
+
+function findUserByGoogleId(googleId) {
+    return userModel.findOne({'google.id': googleId});
+}
 
 function updateUser(userId, user) {
     return userModel.update(

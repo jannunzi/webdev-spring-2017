@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../../css/bootstrap.css" rel="stylesheet"/>
+    <link href="../../css/jquery.json-viewer.css" rel="stylesheet"/>
+    <script src="../../js/jquery.js"></script>
+    <!--<script src="../../js/jquery.json-viewer.js"></script>-->
+    <script src="../../js/angular.1.6.2.js"></script>
+    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <style>
+        form.ng-submitted input.ng-invalid {
+            background-color: red;
+        }
+        form.ng-submitted input.ng-invalid {
+            background-color: red;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body ng-app="validationApp">
+    <div class="container-fluid" ng-controller="validationController as model">
+        <form>
+            <input placeholder="username" required/>
+            <button type="submit">Submit</button>
+        </form>
+        <form novalidate="true" name="form1">
+            <input ng-model="user.username" name="username" placeholder="username" ng-required="true" class="form-control"/>
+            <span ng-show="form1.$submitted && form1.username.$invalid">username is required</span>
+
+            <input ng-model="user.password" name="password" placeholder="password" ng-required="true" type="password" class="form-control"/>
+            <span ng-show="form1.$submitted && form1.username.$invalid">password is required</span>
+
+            <input ng-model="user.email" name="email" placeholder="username@domain" ng-required="true" type="email" class="form-control">
+            <span ng-show="form1.$submitted && form1.email.$error.required">email is required</span>
+            <span ng-show="form1.$submitted && form1.email.$error.email">email most be username@domain</span>
+
+            <input ng-model="user.age" name="age" placeholder="12" ng-required="true" type="number" max="120" min="0" class="form-control"/>
+            <span ng-show="form1.$submitted && form1.age.$error.min">Age must be positive</span>
+            <span ng-show="form1.$submitted && form1.age.$error.max">Age must be less than 120</span>
+            <span ng-show="form1.$submitted && form1.age.$error.required">Age is required</span>
+
+            <input ng-model="user.zip" name="zip" placeholder="01234" ng-required="true" type="text" pattern="[0-9]{5}" class="form-control"/>
+            <span ng-show="form1.$submitted && form1.zip.$error.required">Zip is required</span>
+            <span ng-show="form1.$submitted && form1.zip.$error.pattern">Zip must have 5 numbers</span>
+
+            <br/>
+            Favorite color:
+            <label><input type="radio" name="color" ng-model="user.color" value="yellow" ng-required="true"/> Yellow</label>
+            <label><input type="radio" name="color" ng-model="user.color" value="blue" ng-required="true"/> Blue</label>
+            <label><input type="radio" name="color" ng-model="user.color" value="red" ng-required="true"/> Red</label>
+
+            <br/>
+            Favorite movie generes:
+            <label><input type="checkbox" name="genere" ng-model="user.genere[0]" value="horror" ng-required="true"/> Horror</label>
+            <label><input type="checkbox" name="genere" ng-model="user.genere[1]" value="scifi"  ng-required="true"/> SciFi</label>
+            <label><input type="checkbox" name="genere" ng-model="user.genere[2]" value="action" ng-required="true"/> Action</label>
+
+            <button type="submit" ng-class="model.submit(user)" class="btn btn-block">Submit</button>
+            <button type="reset" class="btn btn-block">Reset</button>
+        </form>
+
+        <pre>{{form1.genere.$error}}</pre>
+
+        <pre>{{user}}</pre>
+
+        <pre>{{form1}}</pre>
+
+    </div>
+</body>
+</html>

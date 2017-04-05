@@ -5,7 +5,12 @@ var userSchema = mongoose.Schema({
     password: String,
     firstName: String,
     lastName: String,
-    roles: [{type: String, enum: ['ADMIN', 'STUDENT', 'FACULTY']}]
+    roles: [{type: String, enum: ['ADMIN', 'STUDENT', 'FACULTY']}],
+    email: String,
+    google: {
+        id: String,
+        token: String
+    }
 }, {collection: 'experiments.passport.user'});
 var userModel = mongoose.model('ExperimentsPassportUserModel', userSchema);
 
@@ -16,10 +21,19 @@ userModel.findUserByUsername = findUserByUsername;
 userModel.findAllUsers = findAllUsers;
 userModel.deleteUser = deleteUser;
 userModel.updateUser = updateUser;
+userModel.findUserByGoogleId = findUserByGoogleId;
 
 module.exports = userModel;
 
+function findUserByGoogleId(googleId) {
+    console.log('userModel.findUserByGoogleId('+googleId+')');
+    console.log(userModel.findOne);
+    return userModel.findOne({'google.id': googleId});
+}
+
 function createUser(user) {
+    console.log(234);
+    console.log(user);
     return userModel.create(user);
 }
 

@@ -1,0 +1,32 @@
+<h1 style="text-transform: capitalize">
+    <a ui-sref="home">
+        <span class="glyphicon glyphicon-chevron-left"></span></a>
+    {{category}}
+</h1>
+
+<ul class="nav nav-tabs">
+    <li ui-sref-active="active">
+        <a ui-sref="library.level({level: 'beginner'})">
+            Beginners
+        </a>
+    </li>
+    <li ui-sref-active="active">
+        <a ui-sref="library.level({level: 'expert'})">
+            Experts
+        </a>
+    </li>
+</ul>
+<br/>
+<div ui-view="level"></div>
+
+<ul class="list-group">
+    <li class="list-group-item active">
+        Course Categories
+    </li>
+    <li ng-repeat="course in courses" class="list-group-item">
+        <a ui-sref="course({courseId: course._id})"> {{course.title}} </a> /
+        <a ui-sref="library({category: course.category})">{{course.category}}</a>
+    </li>
+</ul>
+
+{{courses}}

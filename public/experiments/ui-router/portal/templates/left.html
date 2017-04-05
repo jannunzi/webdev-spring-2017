@@ -1,0 +1,7 @@
+<ul class="list-group">
+    <li ui-sref-active="active" ng-repeat="module in modules" class="list-group-item">
+        <a ui-sref="portal.module.overview({moduleId: module._id})">
+            {{module.title}}
+        </a>
+    </li>
+</ul>

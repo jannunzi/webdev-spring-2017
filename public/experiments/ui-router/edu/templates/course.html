@@ -1,0 +1,40 @@
+<h1>
+    <a ui-sref="library.level({category: course.category, level: course.level})">
+        <span class="glyphicon glyphicon-chevron-left"></span></a>
+    {{course.title}}
+</h1>
+
+<div class="row">
+    <div class="col-xs-8">
+        <!--<div ui-view="coursemain"></div>-->
+        <ul class="nav nav-tabs">
+            <li ui-sref-active="active">
+                <a ui-sref="course.overview">Overview</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="course.lectures">Lectures</a>
+            </li>
+        </ul>
+
+        <br/>
+
+        <div ui-view="details"></div>
+
+    </div>
+    <div class="col-xs-4">
+        <!--<div ui-view="courseside"></div>-->
+        <ul class="nav nav-tabs">
+            <li ui-sref-active="active">
+                <a ui-sref="course.modules">Modules</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="course.assignments">Assignments</a>
+            </li>
+        </ul>
+
+        <div ui-view="modules"></div>
+
+    </div>
+</div>
+{{course}}
+

@@ -1,9 +1,15 @@
 <h1>Login</h1>
 <input class="form-control" ng-model="user.username"/>
 <input class="form-control" ng-model="user.password"/>
+
 <button ng-click="model.login(user)" class="btn btn-block btn-primary">
     Login
 </button>
+
+<a href="/lecture-morning/auth/google" class="btn btn-danger btn-block">
+    <span class="fa fa-google-plus"></span>
+    Google
+</a>
 
 <a href="#!/register" class="btn btn-success btn-block">
     Register
