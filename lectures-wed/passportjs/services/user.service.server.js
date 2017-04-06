@@ -1,6 +1,8 @@
 var app = require('../../../express');
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
 passport.use(new LocalStrategy(localStrategy));
 
 var userModel = require('../models/user.model.server');
@@ -17,6 +19,57 @@ app.get('/api/lectures-wed/user', findAllUsers);
 app.delete('/api/lectures-wed/user/:userId', deleteUser);
 app.put('/api/lectures-wed/user/:userId', updateUser);
 app.put('/api/lectures-wed/profile/:userId', updateProfile);
+
+app.get('/lectures-wed/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+app.get('/google/oauth/callback',
+    passport.authenticate('google', {
+        successRedirect: '/lectures-wed/passportjs/#!/profile',
+        failureRedirect: '/lectures-wed/passportjs/#!/login'
+    }));
+
+
+var googleConfig = {
+    clientID     : process.env.GOOGLE_CLIENT_ID_SPRING_2017,
+    clientSecret : process.env.GOOGLE_CLIENT_SECRET_SPRING_2017,
+    callbackURL  : process.env.GOOGLE_CALLBACK_URL_SPRING_2017
+};
+
+passport.use(new GoogleStrategy(googleConfig, googleStrategy));
+
+function googleStrategy(token, refreshToken, profile, done) {
+    console.log(profile.id);
+    userModel
+        .findUserByGoogleId(profile.id)
+        .then(function (user) {
+            console.log(user);
+            if(user) {
+                console.log(111);
+                done(null, user);
+            } else {
+                console.log(222);
+                var user = {
+                    username: profile.emails[0].value,
+                    photo: profile.photos[0].value,
+                    firstName: profile.name.givenName,
+                    lastName:  profile.name.familyName,
+                    email:     profile.emails[0].value,
+                    google: {
+                        id:    profile.id
+                    }
+                };
+                return userModel.createUser(user);
+            }
+        }, function (err) {
+            console.log(err);
+            done(err, null);
+        })
+        .then(function (user) {
+            done(null, user);
+        }, function (err) {
+            console.log(err);
+            done(err, null);
+        });
+}
 
 function localStrategy(username, password, done) {
     console.log(username);

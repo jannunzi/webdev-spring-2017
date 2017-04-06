@@ -5,8 +5,18 @@ mongoose.Promise = require('q').Promise;
 
 var userSchema = mongoose.Schema({
     username: {type: String, required: true},
-    password: {type: String, required: true},
+    password: {type: String},
     firstName: String,
+    photo: String,
+    google: {
+        id: String
+    },
+    facebook: {
+        id: String
+    },
+    twitter: {
+        id: String
+    },
     role: {type: String, enum: ['ADMIN', 'STUDENT', 'FACULTY', 'USER'], default: 'USER'}
 }, {collection: 'lectureswed.passportjs.user'});
 var userModel = mongoose.model('LecturesPassportJsUserModel', userSchema);
@@ -18,8 +28,15 @@ userModel.findAllUsers = findAllUsers;
 userModel.deleteUser = deleteUser;
 userModel.updateUser = updateUser;
 userModel.updateProfile = updateProfile;
+userModel.findUserByGoogleId = findUserByGoogleId;
 
 module.exports = userModel;
+
+function findUserByGoogleId(googleId) {
+    return userModel.findOne({
+        'google.id': googleId
+    });
+}
 
 function updateUser(user) {
     return userModel.update({_id: user._id}, {$set: user});

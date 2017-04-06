@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../../js/angular.1.6.2.js"></script>
+    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .ng-submitted .ng-invalid {
+            background-color: red;
+        }
+    </style>
+</head>
+<body ng-app="validationApp">
+    <div class="container-fluid" ng-controller="validationController as model">
+        <form novalidate name="form1">
+
+            <input ng-model="user.username" name="username" required class="form-control"/>
+            <span ng-show="form1.$submitted && form1.username.$error.required">Username is required</span>
+
+            <input ng-model="user.email" name="email" required type="email" class="form-control"/>
+            <span ng-show="form1.$submitted && form1.email.$error.required">Email is required</span>
+            <span ng-show="form1.$submitted && form1.email.$error.email">This is not a valid email</span>
+
+            <input ng-model="user.age" type="number" name="age" required min="0" max="120" class="form-control"/>
+            <span ng-show="form1.$submitted && form1.age.$error.required">Age is required</span>
+            <span ng-show="form1.$submitted && form1.age.$error.max">Age has to be below 120</span>
+            <span ng-show="form1.$submitted && form1.age.$error.min">Age must be positive</span>
+
+            <input ng-model="user.zip" name="zip" type="text" pattern="[0-9]{5}" class="form-control"/>
+            <span ng-show="form1.$submitted && form1.zip.$error.pattern">ZIP must be of the form 01234</span>
+
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+
+        {{form1.zip.$error}}
+        <br/>
+        {{form1}}
+    </div>
+</body>
+</html>
