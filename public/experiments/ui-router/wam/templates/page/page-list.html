@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-3">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                Pages
+                <a ui-sref="page.edit({websiteId: websiteId, pageId: 'new'})" style="color:white">
+                    <span class="glyphicon glyphicon-plus pull-right"></span>
+                </a>
+            </li>
+            <li ng-repeat="page in pages" class="list-group-item">
+                <a ui-sref="widget({websiteId: websiteId, pageId: page._id})">
+                    {{page.name}}
+                </a>
+                <a ui-sref="page.edit({websiteId: website._id, pageId: page._id})">
+                    <span class="glyphicon glyphicon-cog pull-right"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-9" ui-view="pageEditor">
+    </div>
+</div>

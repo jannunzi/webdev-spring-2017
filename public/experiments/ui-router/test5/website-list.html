@@ -1,0 +1,10 @@
+<ul class="list-group">
+    <li class="list-group-item active">
+        Websites
+    </li>
+    <li ng-repeat="website in model.websites" class="list-group-item">
+        <a ui-sref="websites.pages({websiteId: website._id})">{{website.name}}</a>
+    </li>
+</ul>
+
+<div ui-view="pages"></div>

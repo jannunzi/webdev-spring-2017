@@ -1,0 +1,21 @@
+<div ui-view="a">
+    <h1>A</h1>
+    <a ui-sref=".b">B</a>
+    <div ui-view="a">
+        <h1>B</h1>
+        <a ui-sref=".c">C</a>
+        <div ui-view="a">
+            <h1>C</h1>
+        </div>
+    </div>
+</div>
+
+===
+
+<div ui-view="a">
+    <h1>A</h1>
+    <a ui-sref=".b">B</a>
+    <div ui-view="a">
+
+    </div>
+</div>

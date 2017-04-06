@@ -1,0 +1,17 @@
+<ul class="list-group">
+    <li ng-if="websiteId=='new'" class="list-group-item active">
+        New Website
+        <a ng-click="createWebsite(website)" style="color:white">
+            <span class="glyphicon glyphicon-ok pull-right"></span>
+        </a>
+    </li>
+    <li ng-if="websiteId!='new'" class="list-group-item active">
+        Edit Website
+        <a ng-click="updateWebsite(website)" style="color:white">
+            <span class="glyphicon glyphicon-ok pull-right"></span>
+        </a>
+    </li>
+    <li class="list-group-item">
+        <input ng-model="website.name" class="form-control" placeholder="name"/>
+    </li>
+</ul>

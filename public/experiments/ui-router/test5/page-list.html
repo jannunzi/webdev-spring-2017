@@ -1,0 +1,10 @@
+<ul class="list-group">
+    <li class="list-group-item active">
+        Pages
+    </li>
+    <li class="list-group-item" ng-repeat="page in model.pages">
+        <a ui-sref=".widgets({pageId: page._id})">{{page.name}}</a>
+    </li>
+</ul>
+
+<div ui-view="widgets"></div>
