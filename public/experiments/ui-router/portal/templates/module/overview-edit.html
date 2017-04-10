@@ -1,0 +1,26 @@
+<ul class="list-group">
+    <li class="list-group-item active">
+        Abstract
+        <a ng-click="updateOverviewAbstract(abstract)" style="color:white">
+            <span class="glyphicon glyphicon-ok pull-right"></span>
+        </a>
+    </li>
+    <li class="list-group-item">
+        <textarea ng-model="abstract" class="form-control"></textarea>
+    </li>
+</ul>
+
+<ul class="list-group">
+    <li class="list-group-item active">
+        Sections
+        <a ng-click="createSection(section)" style="color:white">
+            <span class="glyphicon glyphicon-plus pull-right"></span>
+        </a>
+    </li>
+    <li class="list-group-item">
+        <textarea ng-model="section" class="form-control"></textarea>
+    </li>
+    <li ng-repeat="section in module.overview.sections" class="list-group-item">
+        {{section}}
+    </li>
+</ul>

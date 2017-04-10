@@ -1,0 +1,20 @@
+<ul class="list-group">
+    <li ng-if="courseId=='new'" class="list-group-item active">
+        New Course
+        <a ng-click="createCourse(course)" style="color:white">
+            <span class="glyphicon glyphicon-ok pull-right"></span>
+        </a>
+    </li>
+    <li ng-if="courseId!='new'" class="list-group-item active">
+        Edit Course
+        <a ng-click="updateCourse(course)" style="color:white;margin-left: 10px;" class="pull-right">
+            <span class="glyphicon glyphicon-ok"></span>
+        </a>
+        <a ng-click="deleteCourse(course._id)" style="color:white;margin-left: 10px;" class="pull-right">
+            <span class="glyphicon glyphicon-trash"></span>
+        </a>
+    </li>
+    <li class="list-group-item">
+        <input ng-model="course.name" class="form-control" placeholder="name"/>
+    </li>
+</ul>

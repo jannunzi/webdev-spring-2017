@@ -1,0 +1,15 @@
+
+<ul class="list-group">
+    <li ng-if="!courseId" class="list-group-item active">
+        New Course
+        <span ng-click="createCourse(course)" class="glyphicon glyphicon-ok pull-right"></span>
+    </li>
+    <li ng-if="courseId" class="list-group-item active">
+        Edit Course
+        <span ng-click="updateCourse(course)" class="glyphicon glyphicon-ok pull-right"></span>
+    </li>
+    <li class="list-group-item">
+        <input ng-model="course.title" class="form-control"/>
+    </li>
+</ul>
+\{{courseId}}\

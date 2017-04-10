@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-xs-6">
+        <ul class="list-group">
+            <li class="list-group-item active">
+                Courses
+                <a ui-sref="course.new" style="color:white">
+                    <span class="glyphicon glyphicon-plus pull-right"></span>
+                </a>
+            </li>
+            <li ng-repeat="course in courses" class="list-group-item">
+                <a ui-sref="module({courseId: course._id})">
+                    {{course.title}}
+                </a>
+                <a ui-sref="course.edit({courseId: course._id})">
+                    <span class="glyphicon glyphicon-cog pull-right"></span>
+                </a>
+            </li>
+        </ul>
+        {{courses}}
+    </div>
+    <div class="col-xs-6" ui-view="courseEditor">
+    </div>
+</div>
