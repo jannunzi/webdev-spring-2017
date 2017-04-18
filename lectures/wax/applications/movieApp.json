@@ -1,0 +1,17 @@
+{
+  "name": "movieApp",
+  "entities": {
+    "movie": {
+      "schema": {
+        "title": "String",
+        "releaseDate": "Date"
+      }
+    },
+    "actor": {
+      "schema": {
+        "firstName": "String",
+        "lastName": "String"
+      }
+    }
+  }
+}

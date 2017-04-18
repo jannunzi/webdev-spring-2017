@@ -1,0 +1,53 @@
+(function(){
+    angular
+        .module('<%= application.name %>')
+        .service('<%= entityName %>Service', <%= entityName %>Service);
+
+    function <%= entityName %>Service($http) {
+        <%  var capitalizedSingular = application.entities[entityName].labels.capitalized.singular;
+            var capitalizedPlural = application.entities[entityName].labels.capitalized.plural;
+            var lowercasePlural = application.entities[entityName].labels.lowercase.plural;
+            var lowercaseSingular = application.entities[entityName].labels.lowercase.singular;
+        %>
+        this.create<%= capitalizedSingular %>   = create<%= capitalizedSingular %>;
+        this.findAll<%= capitalizedPlural %>    = findAll<%= capitalizedPlural %>;
+        this.find<%= capitalizedSingular %>ById = find<%= capitalizedSingular %>ById;
+        this.update<%= capitalizedSingular %>   = update<%= capitalizedSingular %>;
+        this.delete<%= capitalizedSingular %>   = delete<%= capitalizedSingular %>;
+
+        <% var words = ['apple', 'tree', 'school', 'house', 'sky', 'beach', 'boat'];%>
+        var <%= lowercasePlural %> = [
+        <% for(var w in words) {
+            %>{_id: '<%= w %>', title: '<%= words[w] %>'},
+        <%}%>
+        ];
+
+        function create<%= capitalizedSingular %>(<%= lowercaseSingular %>) {
+            <%= lowercasePlural %>.push(<%= lowercaseSingular %>);
+        }
+        function findAll<%= capitalizedPlural %>() {
+            return <%= lowercasePlural %>;
+        }
+        function find<%= capitalizedSingular %>ById(<%= lowercaseSingular %>Id) {
+            return <%= lowercasePlural %>.find(function(<%= lowercaseSingular %>){
+                return <%= lowercaseSingular %>._id == <%= lowercaseSingular %>Id;
+            });
+        }
+        function update<%= capitalizedSingular %>(<%= lowercaseSingular %>Id, <%= lowercaseSingular %>) {
+            for(var i in <%= lowercasePlural %>) {
+                if(<%= lowercasePlural %>[i]._id == <%= lowercaseSingular %>Id) {
+                    <%= lowercasePlural %>[i] = <%= lowercaseSingular %>;
+                    return;
+                }
+            }
+        }
+        function delete<%= capitalizedSingular %>(<%= lowercaseSingular %>Id) {
+            for(var i in <%= lowercasePlural %>) {
+                if(<%= lowercasePlural %>[i]._id == <%= lowercaseSingular %>Id) {
+                    <%= lowercasePlural %>.splice(i, 1);
+                    return;
+                }
+            }
+        }
+    }
+})();

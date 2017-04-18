@@ -1,0 +1,21 @@
+(function(){
+    angular
+        .module('<%= application.name %>')
+        .service('<%= entityName %>Service', <%= entityName %>Service);
+
+    function <%= entityName %>Service($http) {
+        this.create<%= entity.labels.capitalized.singular%> = create<%= entity.labels.capitalized.singular%>;
+
+        var <%= entity.labels.lowercase.plural%> = <%- JSON.stringify(entity.mock) %>;
+
+        function create<%= entity.labels.capitalized.singular%>(<%= entity.labels.lowercase.singular %>) {
+            <%= entity.labels.lowercase.plural%>.push(<%= entity.labels.lowercase.singular %>);
+        }
+
+        function findAll<%= entity.labels.capitalized.plural%>() {
+            return <%= entity.labels.lowercase.plural%>;
+        }
+
+
+    }
+})();

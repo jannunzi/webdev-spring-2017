@@ -1,0 +1,8 @@
+<%
+    for(var e in application.entities) {
+%>
+<script src="/wax/<%= application.name %>/<%= e %>/controllers/list/<%= e %>-list.controller.client.js"></script>
+<script src="/wax/<%= application.name %>/<%= e %>/controllers/edit/<%= e %>-edit.controller.client.js"></script>
+<%
+    }
+%>

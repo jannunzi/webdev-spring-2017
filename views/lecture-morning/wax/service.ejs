@@ -1,0 +1,23 @@
+(function(){
+    angular
+        .module('<%= application.name %>')
+        .service('<%= entityName%>Service', <%= entityName%>Service);
+
+    function <%= entityName%>Service() {
+        this.create<%= entityName%> = create<%= entityName%>;
+        this.findAll<%= entityName%> = findAll<%= entityName%>;
+
+        var <%= entityName%>s = [
+            {_id: '123', title: 'avatar covenant'},
+            {_id: '234', title: 'dune'}
+        ];
+
+        function create<%= entityName%>(<%= entityName%>) {
+
+        }
+
+        function findAll<%= entityName%>() {
+            return <%= entityName%>s;
+        }
+    }
+})();

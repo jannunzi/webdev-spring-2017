@@ -1,0 +1,34 @@
+{
+  "name": "movieApp",
+  "environment": "dev",
+  "entities": {
+    "movie": {
+      "mock": [
+        {"_id": "123", "title": "Avatar"},
+        {"_id": "234", "title": "Aliens"},
+        {"_id": "345", "title": "Terminator"}
+      ],
+      "labels": {
+        "capitalized": {
+          "singular": "Movie",
+          "plural": "Movies"
+        },
+        "lowercase": {
+          "singular": "movie",
+          "plural": "movies"
+        }
+      },
+      "fields": {
+        "name": {
+          "type": "String"
+        },
+        "releaseDate": {
+          "type": "Date"
+        }
+      }
+    }
+  },
+  "views": {
+
+  }
+}

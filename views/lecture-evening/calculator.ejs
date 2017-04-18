@@ -1,0 +1,15 @@
+<h1>Calculator</h1>
+
+<%  if(operation === 'add') {
+%>
+<%= param0 %> + <%= param1 %> = <%= result %>
+<%  } else if (operation === 'pow') {
+%>
+<%= param0 %> ^ <%= param1 %> = <%= result %>
+<%  } else if (operation === 'sqr') {
+%>
+<%= param0 %> ^ 2 = <%= result %>
+<%
+}%>
+<br/>
+<%= result %><%= operation %>, <%= param0 %>, <%= param1 %>

@@ -1,0 +1,28 @@
+{
+  "name": "movieApp",
+  "entities": {
+    "movie": {
+      "labels": {
+        "capitalized": {
+          "singular": "Movie",
+          "plural": "Movies"
+        },
+        "lowercase": {
+          "singular": "movie",
+          "plural": "movies"
+        }
+      },
+      "fields": {
+        "name": {
+          "type": "String"
+        },
+        "releaseDate": {
+          "type": "Date"
+        }
+      }
+    }
+  },
+  "views": {
+
+  }
+}

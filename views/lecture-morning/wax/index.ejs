@@ -1,0 +1,20 @@
+<html>
+<head>
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <script src="/js/angular.1.6.2.js"></script>
+    <script src="/js/angular-route.1.6.2.js"></script>
+    <script src="/wax/<%= application.name %>/app.js"></script>
+    <script src="/wax/<%= application.name %>/config.js"></script>
+<%  for(var entityName in application.entities) {
+%>
+    <script src="/wax/<%= application.name %>/<%= entityName %>/controllers/list/<%= entityName %>-list.controller.client.js"></script>
+    <script src="/wax/<%= application.name %>/<%= entityName %>/controllers/edit/<%= entityName %>-edit.controller.client.js"></script>
+    <script src="/wax/<%= application.name %>/<%= entityName %>/service/<%= entityName %>.service.client.js"></script>
+<%
+    }
+%>
+</head>
+<body ng-app="<%= application.name %>">
+    <div class="container-fluid" ng-view></div>
+</body>
+</html>

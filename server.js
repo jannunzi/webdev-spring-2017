@@ -61,6 +61,20 @@ require('./lectures-wed/passportjs/services/user.service.server');
 
 require('./experiments/ejs/hello');
 
+// require('./experiments/wax/app');
+
+require('./experiments/lecture/ejs');
+
+require('./lectures/ejs/hello');
+require('./lectures/dynamic-angular/app');
+// require('./experiments/mongojs/app');
+
+require('./lectures-wed/ejs/hello');
+
+// require('./wax/app');
+
+require('./lectures/wax/app');
+
 var assignment = require("./assignment/app.js");
 assignment(app);
 

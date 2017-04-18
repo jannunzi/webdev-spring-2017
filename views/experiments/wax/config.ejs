@@ -1,0 +1,10 @@
+(function(){
+    angular
+        .module('<%= application.name %>')
+        .config(configuration);
+
+    function configuration($routeProvider) {
+        $routeProvider
+        <% include entities/entity-routes -%>
+    }
+})();

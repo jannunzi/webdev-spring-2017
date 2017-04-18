@@ -1,0 +1,14 @@
+<ul class="list-group">
+    <li class="list-group-item active">
+        <%= application.entities[entityName].labels.capitalized.plural %>
+        <a href="#!/<%= entityName %>/new" style="color:white;">
+            <span class="glyphicon glyphicon-plus pull-right"></span>
+        </a>
+    </li>
+    <li ng-repeat="<%= entityName %> in model.<%= application.entities[entityName].labels.lowercase.plural %>" class="list-group-item">
+        {{<%= entityName %>}}
+        <a href="#!/<%= entityName %>/{{<%= entityName %>._id}}" class="pull-right">
+            <span class="glyphicon glyphicon-cog"></span>
+        </a>
+    </li>
+</ul>

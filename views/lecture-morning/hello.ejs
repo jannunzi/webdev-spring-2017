@@ -1,0 +1,26 @@
+<% include header.html %>
+
+<div class="container-fluid">
+<h1>Hello from EJS</h1>
+
+<table class="table">
+<%  var hello = 'Hello World from Server';
+    var websites = [
+        {_id: 123, title: 'Twitter'},
+        {_id: 234, title: 'Facebook'},
+        {_id: 345, title: 'Apple'}
+    ];
+
+    for(var w in websites) {
+%>
+    <tr>
+        <td><%= websites[w]._id%></td>
+        <td><%= websites[w].title%></td>
+    </tr>
+<%
+    }
+%>
+</table>
+
+<h2><%= hello %></h2>
+</div>

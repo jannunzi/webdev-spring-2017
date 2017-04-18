@@ -1,0 +1,36 @@
+(function() {
+    angular
+        .module('<%= application.name %>')
+        .controller('<%= entityName %>ListController', <%= entityName %>ListController);
+    
+    function <%= entityName %>ListController (<%= entityName %>Service) {
+        var model = this;
+
+        <%
+        var capitalizedSingularEntity = application.entities[entityName].labels.capitalized.singular;
+        var capitalizedPluralEntity   = application.entities[entityName].labels.capitalized.plural;
+        var lowercasePluralEntity     = application.entities[entityName].labels.lowercase.plural;
+        %>
+        function init() {
+            findAll<%= capitalizedPluralEntity %>();
+        }
+        init();
+
+        function findAll<%= capitalizedPluralEntity %>() {
+            var movies = [
+                {_id: 123, title: 'Movie 1'}
+            ];
+            render<%= capitalizedPluralEntity %>(movies);
+        }
+
+        function render<%= capitalizedPluralEntity %>(<%= lowercasePluralEntity %>) {
+            model.<%= lowercasePluralEntity %> = <%= lowercasePluralEntity %>;
+        }
+
+        model.create<%= capitalizedSingularEntity %> = create<%= capitalizedSingularEntity %>;
+        
+        function create<%= capitalizedSingularEntity %>(<%= entityName %>) {
+            
+        }
+    }
+})();

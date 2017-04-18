@@ -1,0 +1,32 @@
+(function() {
+    angular
+        .module('<%= application.name %>')
+        .controller('<%= entityName %>EditController', <%= entityName %>EditController);
+    
+    function <%= entityName %>EditController ($routeParams) {
+        var model = this;
+        model.<%= entityName %>Id = $routeParams.<%= entityName %>Id;
+
+        <% var capitalizedEntity = application.entities[entityName].labels.capitalized.singular; -%>
+model.create<%= capitalizedEntity %> = create<%= capitalizedEntity %>;
+        model.delete<%= capitalizedEntity %> = delete<%= capitalizedEntity %>;
+        model.update<%= capitalizedEntity %> = update<%= capitalizedEntity %>;
+
+        function init() {
+
+        }
+        init();
+
+        function create<%= capitalizedEntity %>(<%= entityName %>) {
+
+        }
+
+        function delete<%= capitalizedEntity %>(<%= entityName %>Id) {
+
+        }
+
+        function update<%= capitalizedEntity %>(<%= entityName %>Id, <%= entityName %>) {
+
+        }
+    }
+})();

@@ -1,0 +1,34 @@
+<% include header.html %>
+
+<!--<script src="/to/my/dynamic/javascript"></script>-->
+
+<div class="container-fluid">
+<h1>Hello from EJS</h1>
+
+<%  var hello = "Hello World";
+    var movies = [
+        {_id: 123, title: 'Avatar'},
+        {_id: 123, title: 'Alien Covenant'},
+        {_id: 123, title: 'Terminator'}
+    ]
+-%>
+
+<table class="table">
+<%
+    for(var m in movies) {
+-%>
+    <tr>
+        <td>
+            <%= movies[m]._id %>
+        </td>
+        <td>
+            <%= movies[m].title %>
+        </td>
+    </tr>
+<%
+    }
+-%>
+</table>
+
+<%= hello %>
+</div>
